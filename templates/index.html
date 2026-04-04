@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACEest Fitness &amp; Gym</title>
+    <meta name="description" content="ACEest Fitness & Gym - Premium fitness and gym management web application. Track clients, workouts, and generate AI-powered training programs.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1a1a;
+            color: #fff;
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(135deg, #d4af37 0%, #b8962e 100%);
+            padding: 2rem;
+            text-align: center;
+        }
+        header h1 { color: #1a1a1a; font-size: 2.5rem; letter-spacing: 2px; }
+        header p { color: #333; font-size: 1.1rem; margin-top: 0.5rem; }
+        .container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+        .card {
+            background: #2a2a2a;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #333;
+        }
+        .card h2 { color: #d4af37; margin-bottom: 1rem; font-size: 1.4rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .status { display: inline-block; padding: 0.3rem 0.8rem; background: #27ae60; border-radius: 20px; font-size: 0.85rem; }
+        .endpoint { padding: 0.8rem 1rem; background: #333; border-radius: 8px; margin-bottom: 0.5rem; font-family: monospace; font-size: 0.95rem; }
+        .method { display: inline-block; padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: bold; font-size: 0.8rem; margin-right: 0.5rem; }
+        .get { background: #27ae60; color: #fff; }
+        .post { background: #2980b9; color: #fff; }
+        .delete { background: #c0392b; color: #fff; }
+        footer { text-align: center; padding: 2rem; color: #666; border-top: 1px solid #333; margin-top: 2rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>&#127947; ACEest Fitness &amp; Gym</h1>
+        <p>Premium Fitness &amp; Gym Management System</p>
+    </header>
+    <div class="container">
+        <div class="card">
+            <h2>System Status</h2>
+            <p><span class="status">&#10003; Online</span> &mdash; All services are running normally.</p>
+        </div>
+        <div class="card">
+            <h2>API Endpoints</h2>
+            <div class="grid">
+                <div>
+                    <h3 style="color:#d4af37;margin-bottom:0.5rem;">Clients</h3>
+                    <div class="endpoint"><span class="method get">GET</span>/api/clients</div>
+                    <div class="endpoint"><span class="method post">POST</span>/api/clients</div>
+                    <div class="endpoint"><span class="method get">GET</span>/api/clients/&lt;name&gt;</div>
+                    <div class="endpoint"><span class="method delete">DELETE</span>/api/clients/&lt;name&gt;</div>
+                </div>
+                <div>
+                    <h3 style="color:#d4af37;margin-bottom:0.5rem;">Workouts &amp; Programs</h3>
+                    <div class="endpoint"><span class="method get">GET</span>/api/workouts/&lt;client&gt;</div>
+                    <div class="endpoint"><span class="method post">POST</span>/api/workouts</div>
+                    <div class="endpoint"><span class="method post">POST</span>/api/generate-program</div>
+                    <div class="endpoint"><span class="method get">GET</span>/api/programs</div>
+                </div>
+                <div>
+                    <h3 style="color:#d4af37;margin-bottom:0.5rem;">Health &amp; Tools</h3>
+                    <div class="endpoint"><span class="method get">GET</span>/health</div>
+                    <div class="endpoint"><span class="method post">POST</span>/api/bmi</div>
+                    <div class="endpoint"><span class="method get">GET</span>/api/membership/&lt;client&gt;</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2026 ACEest Fitness &amp; Gym &mdash; DevOps Assignment</p>
+    </footer>
+</body>
+</html>
