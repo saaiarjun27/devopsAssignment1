@@ -9,8 +9,7 @@ pipeline {
     agent any
 
     environment {
-        PYTHON_VERSION = '3.12'
-        APP_NAME       = 'aceest-fitness'
+        APP_NAME = 'aceest-fitness'
     }
 
     stages {
@@ -18,7 +17,7 @@ pipeline {
         // Stage 1 – Checkout source from GitHub
         stage('Checkout') {
             steps {
-                echo '📥 Pulling latest code from GitHub...'
+                echo 'Pulling latest code from GitHub...'
                 checkout scm
             }
         }
@@ -26,10 +25,10 @@ pipeline {
         // Stage 2 – Install dependencies
         stage('Install Dependencies') {
             steps {
-                echo '📦 Installing Python dependencies...'
+                echo 'Installing Python dependencies...'
                 sh '''
-                    python3 -m pip install --upgrade pip
-                    pip install -r requirements.txt
+                    python3 -m pip install --break-system-packages --upgrade pip
+                    python3 -m pip install --break-system-packages -r requirements.txt
                 '''
             }
         }
@@ -37,9 +36,9 @@ pipeline {
         // Stage 3 – Lint / Syntax check
         stage('Lint') {
             steps {
-                echo '🔍 Running flake8 lint checks...'
+                echo 'Running flake8 lint checks...'
                 sh '''
-                    flake8 app.py --count --select=E9,F63,F7,F82 --show-source --statistics
+                    python3 -m flake8 app.py --count --select=E9,F63,F7,F82 --show-source --statistics
                 '''
             }
         }
@@ -47,17 +46,22 @@ pipeline {
         // Stage 4 – Run unit tests
         stage('Test') {
             steps {
-                echo '🧪 Running Pytest suite...'
+                echo 'Running Pytest suite...'
                 sh '''
                     python3 -m pytest test_app.py -v --tb=short
                 '''
             }
         }
 
-        // Stage 5 – Build Docker image
+        // Stage 5 – Docker Build (only if docker is available)
         stage('Docker Build') {
+            when {
+                expression {
+                    return sh(script: 'which docker', returnStatus: true) == 0
+                }
+            }
             steps {
-                echo '🐳 Building Docker image...'
+                echo 'Building Docker image...'
                 sh '''
                     docker build -t ${APP_NAME}:${BUILD_NUMBER} .
                     docker tag ${APP_NAME}:${BUILD_NUMBER} ${APP_NAME}:latest
@@ -68,13 +72,13 @@ pipeline {
 
     post {
         success {
-            echo '✅ BUILD SUCCESSFUL – All stages passed.'
+            echo 'BUILD SUCCESSFUL - All stages passed.'
         }
         failure {
-            echo '❌ BUILD FAILED – Check the stage logs above.'
+            echo 'BUILD FAILED - Check the stage logs above.'
         }
         always {
-            echo '🧹 Cleaning up workspace...'
+            echo 'Cleaning up workspace...'
             cleanWs()
         }
     }
