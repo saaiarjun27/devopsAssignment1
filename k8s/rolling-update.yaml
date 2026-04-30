@@ -22,6 +22,7 @@ spec:
       containers:
       - name: aceest-fitness
         image: saaiarjun27/aceest-fitness:latest
+        imagePullPolicy: Never
         ports:
         - containerPort: 5000
         livenessProbe:
