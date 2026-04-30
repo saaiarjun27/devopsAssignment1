@@ -19,7 +19,8 @@ spec:
     spec:
       containers:
       - name: aceest-fitness
-        image: saaiarjun27/aceest-fitness:v1.0
+        image: saaiarjun27/aceest-fitness:latest
+        imagePullPolicy: Never
         ports:
         - containerPort: 5000
 
@@ -46,7 +47,8 @@ spec:
     spec:
       containers:
       - name: aceest-fitness
-        image: saaiarjun27/aceest-fitness:v1.1
+        image: saaiarjun27/aceest-fitness:latest
+        imagePullPolicy: Never
         ports:
         - containerPort: 5000
 

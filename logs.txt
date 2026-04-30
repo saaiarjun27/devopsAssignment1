@@ -1,0 +1,715 @@
+
+==> Audit <==
+┌─────────┬───────────────────────────────────────────────────────────────────────────┬──────────┬───────┬─────────┬─────────────────────┬─────────────────────┐
+│ COMMAND │                                   ARGS                                    │ PROFILE  │ USER  │ VERSION │     START TIME      │      END TIME       │
+├─────────┼───────────────────────────────────────────────────────────────────────────┼──────────┼───────┼─────────┼─────────────────────┼─────────────────────┤
+│ start   │                                                                           │ minikube │ arjun │ v1.38.1 │ 30 Apr 26 15:42 UTC │                     │
+│ delete  │                                                                           │ minikube │ arjun │ v1.38.1 │ 30 Apr 26 15:49 UTC │ 30 Apr 26 15:49 UTC │
+│ start   │                                                                           │ minikube │ arjun │ v1.38.1 │ 30 Apr 26 15:50 UTC │                     │
+│ delete  │                                                                           │ minikube │ arjun │ v1.38.1 │ 30 Apr 26 15:58 UTC │ 30 Apr 26 15:58 UTC │
+│ start   │                                                                           │ minikube │ arjun │ v1.38.1 │ 30 Apr 26 15:58 UTC │                     │
+│ delete  │                                                                           │ minikube │ arjun │ v1.38.1 │ 30 Apr 26 16:03 UTC │ 30 Apr 26 16:03 UTC │
+│ start   │ --docker-env default-address-pools=[{"base":"192.168.49.0/24","size":24}] │ minikube │ arjun │ v1.38.1 │ 30 Apr 26 16:03 UTC │                     │
+└─────────┴───────────────────────────────────────────────────────────────────────────┴──────────┴───────┴─────────┴─────────────────────┴─────────────────────┘
+
+
+==> Last Start <==
+Log file created at: 2026/04/30 16:03:18
+Running on machine: MSI
+Binary: Built with gc go1.25.5 for linux/amd64
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0430 16:03:18.468179   31090 out.go:360] Setting OutFile to fd 1 ...
+I0430 16:03:18.469371   31090 out.go:413] isatty.IsTerminal(1) = true
+I0430 16:03:18.469381   31090 out.go:374] Setting ErrFile to fd 2...
+I0430 16:03:18.469387   31090 out.go:413] isatty.IsTerminal(2) = true
+I0430 16:03:18.469926   31090 root.go:338] Updating PATH: /home/arjun/.minikube/bin
+I0430 16:03:18.471433   31090 out.go:368] Setting JSON to false
+I0430 16:03:18.473969   31090 start.go:134] hostinfo: {"hostname":"MSI","uptime":1678,"bootTime":1777563320,"procs":41,"os":"linux","platform":"ubuntu","platformFamily":"debian","platformVersion":"24.04","kernelVersion":"6.6.87.2-microsoft-standard-WSL2","kernelArch":"x86_64","virtualizationSystem":"kvm","virtualizationRole":"guest","hostId":"2890f67d-9b91-4ff6-8a06-3ecd8eebca92"}
+I0430 16:03:18.474372   31090 start.go:144] virtualization: kvm guest
+I0430 16:03:18.497253   31090 out.go:179] 😄  minikube v1.38.1 on Ubuntu 24.04 (kvm/amd64)
+I0430 16:03:18.505281   31090 notify.go:220] Checking for updates...
+I0430 16:03:18.506030   31090 driver.go:422] Setting default libvirt URI to qemu:///system
+I0430 16:03:18.506258   31090 global.go:113] Querying for installed drivers using PATH=/home/arjun/.minikube/bin:/home/arjun/.local/bin:/home/arjun/.nvm/versions/node/v22.12.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/nodejs/:/mnt/c/Program Files/Tailscale/:/mnt/c/Program Files/Git/cmd:/mnt/c/Users/Admin/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Admin/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Admin/AppData/Roaming/npm:/mnt/c/Users/Admin/AppData/Local/GitHubDesktop/bin:/mnt/c/Users/Admin/AppData/Local/Programs/Antigravity/bin:/mnt/c/Users/Admin/.antigravity/extensions/ms-python.debugpy-2026.4.0-win32-x64/bundled/scripts/noConfigScripts:/snap/bin
+I0430 16:03:18.656237   31090 global.go:134] virtualbox default: true priority: 6, state: {Installed:false Healthy:false Running:false NeedsImprovement:false Error:unable to find VBoxManage in $PATH Reason: Fix:Install VirtualBox Doc:https://minikube.sigs.k8s.io/docs/reference/drivers/virtualbox/ Version:}
+I0430 16:03:18.732846   31090 global.go:134] vmware default: false priority: 5, state: {Installed:false Healthy:false Running:false NeedsImprovement:false Error:exec: "vmrun": executable file not found in $PATH Reason: Fix:Install vmrun Doc:https://minikube.sigs.k8s.io/docs/reference/drivers/vmware/ Version:}
+I0430 16:03:18.963735   31090 docker.go:125] docker version: linux-28.5.2:Docker Engine - Community
+I0430 16:03:18.963890   31090 cli_runner.go:164] Run: docker system info --format "{{json .}}"
+I0430 16:03:19.287527   31090 info.go:266] docker info: {ID:d3989428-55ca-4347-8a07-c469e83f0144 Containers:4 ContainersRunning:3 ContainersPaused:0 ContainersStopped:1 Images:9 Driver:overlay2 DriverStatus:[[Backing Filesystem extfs] [Supports d_type true] [Using metacopy false] [Native Overlay Diff true] [userxattr false]] SystemStatus:<nil> Plugins:{Volume:[local] Network:[bridge host ipvlan macvlan null overlay] Authorization:<nil> Log:[awslogs fluentd gcplogs gelf journald json-file local splunk syslog]} MemoryLimit:true SwapLimit:true KernelMemory:false KernelMemoryTCP:false CPUCfsPeriod:true CPUCfsQuota:true CPUShares:true CPUSet:true PidsLimit:true IPv4Forwarding:true BridgeNfIptables:false BridgeNfIP6Tables:false Debug:false NFd:56 OomKillDisable:false NGoroutines:70 SystemTime:2026-04-30 16:03:19.255538158 +0000 UTC LoggingDriver:json-file CgroupDriver:systemd NEventsListener:0 KernelVersion:6.6.87.2-microsoft-standard-WSL2 OperatingSystem:Ubuntu 24.04.3 LTS OSType:linux Architecture:x86_64 IndexServerAddress:https://index.docker.io/v1/ RegistryConfig:{AllowNondistributableArtifactsCIDRs:[] AllowNondistributableArtifactsHostnames:[] InsecureRegistryCIDRs:[::1/128 127.0.0.0/8] IndexConfigs:{DockerIo:{Name:docker.io Mirrors:[] Secure:true Official:true}} Mirrors:[]} NCPU:12 MemTotal:3767750656 GenericResources:<nil> DockerRootDir:/var/lib/docker HTTPProxy: HTTPSProxy: NoProxy: Name:MSI Labels:[] ExperimentalBuild:false ServerVersion:28.5.2 ClusterStore: ClusterAdvertise: Runtimes:{Runc:{Path:runc}} DefaultRuntime:runc Swarm:{NodeID: NodeAddr: LocalNodeState:inactive ControlAvailable:false Error: RemoteManagers:<nil>} LiveRestoreEnabled:false Isolation: InitBinary:docker-init ContainerdCommit:{ID:442cb34bda9a6a0fed82a2ca7cade05c5c749582 Expected:} RuncCommit:{ID:v1.3.3-0-gd842d771 Expected:} InitCommit:{ID:de40ad0 Expected:} SecurityOptions:[name=seccomp,profile=builtin name=cgroupns] ProductLicense: Warnings:<nil> ServerErrors:[] ClientInfo:{Debug:false Plugins:[map[Name:buildx Path:/usr/libexec/docker/cli-plugins/docker-buildx SchemaVersion:0.1.0 ShortDescription:Docker Buildx Vendor:Docker Inc. Version:v0.29.1] map[Name:compose Path:/usr/libexec/docker/cli-plugins/docker-compose SchemaVersion:0.1.0 ShortDescription:Docker Compose Vendor:Docker Inc. Version:v2.40.3]] Warnings:<nil>}}
+I0430 16:03:19.287657   31090 docker.go:320] overlay module found
+I0430 16:03:19.287724   31090 global.go:134] docker default: true priority: 9, state: {Installed:true Healthy:true Running:false NeedsImprovement:false Error:<nil> Reason: Fix: Doc: Version:}
+I0430 16:03:19.302135   31090 global.go:134] none default: false priority: 4, state: {Installed:false Healthy:false Running:false NeedsImprovement:false Error:running the 'none' driver as a regular user requires sudo permissions Reason: Fix: Doc: Version:}
+I0430 16:03:19.384478   31090 global.go:134] podman default: true priority: 7, state: {Installed:false Healthy:false Running:false NeedsImprovement:false Error:exec: "podman": executable file not found in $PATH Reason: Fix:Install Podman Doc:https://minikube.sigs.k8s.io/docs/drivers/podman/ Version:}
+I0430 16:03:19.384583   31090 global.go:134] ssh default: false priority: 4, state: {Installed:true Healthy:true Running:false NeedsImprovement:false Error:<nil> Reason: Fix: Doc: Version:}
+I0430 16:03:19.470668   31090 global.go:134] kvm2 default: true priority: 8, state: {Installed:false Healthy:false Running:false NeedsImprovement:false Error:exec: "virsh": executable file not found in $PATH Reason: Fix:Install libvirt Doc:https://minikube.sigs.k8s.io/docs/reference/drivers/kvm2/ Version:}
+I0430 16:03:19.553513   31090 global.go:134] qemu2 default: true priority: 7, state: {Installed:false Healthy:false Running:false NeedsImprovement:false Error:exec: "qemu-system-x86_64": executable file not found in $PATH Reason: Fix:Install qemu-system Doc:https://minikube.sigs.k8s.io/docs/reference/drivers/qemu/ Version:}
+I0430 16:03:19.553600   31090 driver.go:344] not recommending "ssh" due to default: false
+I0430 16:03:19.553622   31090 driver.go:379] Picked: docker
+I0430 16:03:19.553632   31090 driver.go:380] Alternatives: [ssh]
+I0430 16:03:19.553638   31090 driver.go:381] Rejects: [virtualbox vmware none podman kvm2 qemu2]
+I0430 16:03:19.588005   31090 out.go:179] ✨  Automatically selected the docker driver
+I0430 16:03:19.592999   31090 start.go:310] selected driver: docker
+I0430 16:03:19.593078   31090 start.go:935] validating driver "docker" against <nil>
+I0430 16:03:19.593097   31090 start.go:946] status for docker: {Installed:true Healthy:true Running:false NeedsImprovement:false Error:<nil> Reason: Fix: Doc: Version:}
+I0430 16:03:19.593376   31090 cli_runner.go:164] Run: docker system info --format "{{json .}}"
+I0430 16:03:19.908079   31090 info.go:266] docker info: {ID:d3989428-55ca-4347-8a07-c469e83f0144 Containers:4 ContainersRunning:3 ContainersPaused:0 ContainersStopped:1 Images:9 Driver:overlay2 DriverStatus:[[Backing Filesystem extfs] [Supports d_type true] [Using metacopy false] [Native Overlay Diff true] [userxattr false]] SystemStatus:<nil> Plugins:{Volume:[local] Network:[bridge host ipvlan macvlan null overlay] Authorization:<nil> Log:[awslogs fluentd gcplogs gelf journald json-file local splunk syslog]} MemoryLimit:true SwapLimit:true KernelMemory:false KernelMemoryTCP:false CPUCfsPeriod:true CPUCfsQuota:true CPUShares:true CPUSet:true PidsLimit:true IPv4Forwarding:true BridgeNfIptables:false BridgeNfIP6Tables:false Debug:false NFd:60 OomKillDisable:false NGoroutines:82 SystemTime:2026-04-30 16:03:19.872073458 +0000 UTC LoggingDriver:json-file CgroupDriver:systemd NEventsListener:0 KernelVersion:6.6.87.2-microsoft-standard-WSL2 OperatingSystem:Ubuntu 24.04.3 LTS OSType:linux Architecture:x86_64 IndexServerAddress:https://index.docker.io/v1/ RegistryConfig:{AllowNondistributableArtifactsCIDRs:[] AllowNondistributableArtifactsHostnames:[] InsecureRegistryCIDRs:[::1/128 127.0.0.0/8] IndexConfigs:{DockerIo:{Name:docker.io Mirrors:[] Secure:true Official:true}} Mirrors:[]} NCPU:12 MemTotal:3767750656 GenericResources:<nil> DockerRootDir:/var/lib/docker HTTPProxy: HTTPSProxy: NoProxy: Name:MSI Labels:[] ExperimentalBuild:false ServerVersion:28.5.2 ClusterStore: ClusterAdvertise: Runtimes:{Runc:{Path:runc}} DefaultRuntime:runc Swarm:{NodeID: NodeAddr: LocalNodeState:inactive ControlAvailable:false Error: RemoteManagers:<nil>} LiveRestoreEnabled:false Isolation: InitBinary:docker-init ContainerdCommit:{ID:442cb34bda9a6a0fed82a2ca7cade05c5c749582 Expected:} RuncCommit:{ID:v1.3.3-0-gd842d771 Expected:} InitCommit:{ID:de40ad0 Expected:} SecurityOptions:[name=seccomp,profile=builtin name=cgroupns] ProductLicense: Warnings:<nil> ServerErrors:[] ClientInfo:{Debug:false Plugins:[map[Name:buildx Path:/usr/libexec/docker/cli-plugins/docker-buildx SchemaVersion:0.1.0 ShortDescription:Docker Buildx Vendor:Docker Inc. Version:v0.29.1] map[Name:compose Path:/usr/libexec/docker/cli-plugins/docker-compose SchemaVersion:0.1.0 ShortDescription:Docker Compose Vendor:Docker Inc. Version:v2.40.3]] Warnings:<nil>}}
+W0430 16:03:19.908457   31090 out.go:285] ❗  Starting v1.39.0, minikube will default to "containerd" container runtime. See #21973 for more info.
+I0430 16:03:19.908745   31090 start_flags.go:332] no existing cluster config was found, will generate one from the flags 
+I0430 16:03:19.930912   31090 out.go:203] 
+W0430 16:03:19.934764   31090 out.go:285] 🧯  The requested memory allocation of 3072MiB does not leave room for system overhead (total system memory: 3593MiB). You may face stability issues.
+W0430 16:03:19.934968   31090 out.go:285] 💡  Suggestion: Start minikube with less memory allocated: 'minikube start --memory=3072mb'
+I0430 16:03:19.938886   31090 out.go:203] 
+I0430 16:03:19.942677   31090 start_flags.go:416] Using suggested 3072MB memory alloc based on sys=3593MB, container=3593MB
+I0430 16:03:19.943062   31090 start_flags.go:1000] Wait components to verify : map[apiserver:true system_pods:true]
+I0430 16:03:19.946982   31090 out.go:179] 📌  Using Docker driver with root privileges
+I0430 16:03:19.950927   31090 cni.go:83] Creating CNI manager for ""
+I0430 16:03:19.951023   31090 cni.go:157] "docker" driver + "docker" container runtime found on kubernetes v1.24+, recommending bridge
+I0430 16:03:19.951034   31090 start_flags.go:341] Found "bridge CNI" CNI - setting NetworkPlugin=cni
+I0430 16:03:19.951225   31090 start.go:358] cluster config:
+{Name:minikube KeepContext:false EmbedCerts:false MinikubeISO: KicBaseImage:gcr.io/k8s-minikube/kicbase:v0.0.50@sha256:eb4fec00e8ad70adf8e6436f195cc429825ffb85f95afcdb5d8d9deb576f3e93 Memory:3072 CPUs:2 DiskSize:20000 Driver:docker HyperkitVpnKitSock: HyperkitVSockPorts:[] DockerEnv:[default-address-pools=[{"base":"192.168.49.0/24","size":24}]] ContainerVolumeMounts:[] InsecureRegistry:[] RegistryMirror:[] HostOnlyCIDR:192.168.59.1/24 HypervVirtualSwitch: HypervUseExternalSwitch:false HypervExternalAdapter: KVMNetwork:default KVMQemuURI:qemu:///system KVMGPU:false KVMHidden:false KVMNUMACount:1 APIServerPort:8443 DockerOpt:[] DisableDriverMounts:false NFSShare:[] NFSSharesRoot:/nfsshares UUID: NoVTXCheck:false DNSProxy:false HostDNSResolver:true HostOnlyNicType:virtio NatNicType:virtio SSHIPAddress: SSHUser:root SSHKey: SSHPort:22 KubernetesConfig:{KubernetesVersion:v1.35.1 ClusterName:minikube Namespace:default APIServerHAVIP: APIServerName:minikubeCA APIServerNames:[] APIServerIPs:[] DNSDomain:cluster.local ContainerRuntime:docker CRISocket: NetworkPlugin:cni FeatureGates: ServiceCIDR:10.96.0.0/12 ImageRepository: LoadBalancerStartIP: LoadBalancerEndIP: CustomIngressCert: RegistryAliases: ExtraOptions:[] ShouldLoadCachedImages:true EnableDefaultCNI:false CNI:} Nodes:[{Name: IP: Port:8443 KubernetesVersion:v1.35.1 ContainerRuntime:docker ControlPlane:true Worker:true}] Addons:map[] CustomAddonImages:map[] CustomAddonRegistries:map[] VerifyComponents:map[apiserver:true system_pods:true] StartHostTimeout:6m0s ScheduledStop:<nil> ExposedPorts:[] ListenAddress: Network: Subnet: MultiNodeRequested:false ExtraDisks:0 CertExpiration:26280h0m0s MountString: Mount9PVersion:9p2000.L MountGID:docker MountIP: MountMSize:262144 MountOptions:[] MountPort:0 MountType:9p MountUID:docker BinaryMirror: DisableOptimizations:false DisableMetrics:false DisableCoreDNSLog:false CustomQemuFirmwarePath: SocketVMnetClientPath: SocketVMnetPath: StaticIP: SSHAuthSock: SSHAgentPID:0 GPUs: AutoPauseInterval:1m0s Rosetta:false}
+I0430 16:03:19.958527   31090 out.go:179] 👍  Starting "minikube" primary control-plane node in "minikube" cluster
+I0430 16:03:19.962363   31090 cache.go:135] Beginning downloading kic base image for docker with docker
+I0430 16:03:19.966148   31090 out.go:179] 🚜  Pulling base image v0.0.50 ...
+I0430 16:03:19.970480   31090 preload.go:187] Checking if preload exists for k8s version v1.35.1 and runtime docker
+I0430 16:03:19.970490   31090 image.go:82] Checking for gcr.io/k8s-minikube/kicbase:v0.0.50@sha256:eb4fec00e8ad70adf8e6436f195cc429825ffb85f95afcdb5d8d9deb576f3e93 in local docker daemon
+I0430 16:03:19.970541   31090 preload.go:202] Found local preload: /home/arjun/.minikube/cache/preloaded-tarball/preloaded-images-k8s-v18-v1.35.1-docker-overlay2-amd64.tar.lz4
+I0430 16:03:19.970580   31090 cache.go:66] Caching tarball of preloaded images
+I0430 16:03:19.970840   31090 preload.go:250] Found /home/arjun/.minikube/cache/preloaded-tarball/preloaded-images-k8s-v18-v1.35.1-docker-overlay2-amd64.tar.lz4 in cache, skipping download
+I0430 16:03:19.970922   31090 cache.go:69] Finished verifying existence of preloaded tar for v1.35.1 on docker
+I0430 16:03:19.971390   31090 profile.go:143] Saving config to /home/arjun/.minikube/profiles/minikube/config.json ...
+I0430 16:03:19.971439   31090 lock.go:61] WriteFile acquiring /home/arjun/.minikube/profiles/minikube/config.json: {Name:mkee0268e287889885f8f2a49f1c679fbcb6bf03 Timeout:1m0s Delay:500ms}
+I0430 16:03:20.195588   31090 image.go:101] Found gcr.io/k8s-minikube/kicbase:v0.0.50@sha256:eb4fec00e8ad70adf8e6436f195cc429825ffb85f95afcdb5d8d9deb576f3e93 in local docker daemon, skipping pull
+I0430 16:03:20.195602   31090 cache.go:159] gcr.io/k8s-minikube/kicbase:v0.0.50@sha256:eb4fec00e8ad70adf8e6436f195cc429825ffb85f95afcdb5d8d9deb576f3e93 exists in daemon, skipping load
+I0430 16:03:20.195668   31090 cache.go:244] Successfully downloaded all kic artifacts
+I0430 16:03:20.195697   31090 start.go:359] acquireMachinesLock for minikube: {Name:mk3e9c6e6bbaccca25c6a01324d3a6f56cad9dc5 Timeout:10m0s Delay:500ms}
+I0430 16:03:20.195775   31090 start.go:363] duration metric: took 64.814µs to acquireMachinesLock for "minikube"
+I0430 16:03:20.195820   31090 start.go:92] Provisioning new machine with config: &{Name:minikube KeepContext:false EmbedCerts:false MinikubeISO: KicBaseImage:gcr.io/k8s-minikube/kicbase:v0.0.50@sha256:eb4fec00e8ad70adf8e6436f195cc429825ffb85f95afcdb5d8d9deb576f3e93 Memory:3072 CPUs:2 DiskSize:20000 Driver:docker HyperkitVpnKitSock: HyperkitVSockPorts:[] DockerEnv:[default-address-pools=[{"base":"192.168.49.0/24","size":24}]] ContainerVolumeMounts:[] InsecureRegistry:[] RegistryMirror:[] HostOnlyCIDR:192.168.59.1/24 HypervVirtualSwitch: HypervUseExternalSwitch:false HypervExternalAdapter: KVMNetwork:default KVMQemuURI:qemu:///system KVMGPU:false KVMHidden:false KVMNUMACount:1 APIServerPort:8443 DockerOpt:[] DisableDriverMounts:false NFSShare:[] NFSSharesRoot:/nfsshares UUID: NoVTXCheck:false DNSProxy:false HostDNSResolver:true HostOnlyNicType:virtio NatNicType:virtio SSHIPAddress: SSHUser:root SSHKey: SSHPort:22 KubernetesConfig:{KubernetesVersion:v1.35.1 ClusterName:minikube Namespace:default APIServerHAVIP: APIServerName:minikubeCA APIServerNames:[] APIServerIPs:[] DNSDomain:cluster.local ContainerRuntime:docker CRISocket: NetworkPlugin:cni FeatureGates: ServiceCIDR:10.96.0.0/12 ImageRepository: LoadBalancerStartIP: LoadBalancerEndIP: CustomIngressCert: RegistryAliases: ExtraOptions:[] ShouldLoadCachedImages:true EnableDefaultCNI:false CNI:} Nodes:[{Name: IP: Port:8443 KubernetesVersion:v1.35.1 ContainerRuntime:docker ControlPlane:true Worker:true}] Addons:map[] CustomAddonImages:map[] CustomAddonRegistries:map[] VerifyComponents:map[apiserver:true system_pods:true] StartHostTimeout:6m0s ScheduledStop:<nil> ExposedPorts:[] ListenAddress: Network: Subnet: MultiNodeRequested:false ExtraDisks:0 CertExpiration:26280h0m0s MountString: Mount9PVersion:9p2000.L MountGID:docker MountIP: MountMSize:262144 MountOptions:[] MountPort:0 MountType:9p MountUID:docker BinaryMirror: DisableOptimizations:false DisableMetrics:false DisableCoreDNSLog:false CustomQemuFirmwarePath: SocketVMnetClientPath: SocketVMnetPath: StaticIP: SSHAuthSock: SSHAgentPID:0 GPUs: AutoPauseInterval:1m0s Rosetta:false} &{Name: IP: Port:8443 KubernetesVersion:v1.35.1 ContainerRuntime:docker ControlPlane:true Worker:true}
+I0430 16:03:20.195884   31090 start.go:124] createHost starting for "" (driver="docker")
+I0430 16:03:20.200584   31090 out.go:252] 🔥  Creating docker container (CPUs=2, Memory=3072MB) ...
+I0430 16:03:20.201168   31090 start.go:158] libmachine.API.Create for "minikube" (driver="docker")
+I0430 16:03:20.201231   31090 client.go:173] LocalClient.Create starting
+I0430 16:03:20.201507   31090 main.go:144] libmachine: Reading certificate data from /home/arjun/.minikube/certs/ca.pem
+I0430 16:03:20.201599   31090 main.go:144] libmachine: Decoding PEM data...
+I0430 16:03:20.201633   31090 main.go:144] libmachine: Parsing certificate...
+I0430 16:03:20.201721   31090 main.go:144] libmachine: Reading certificate data from /home/arjun/.minikube/certs/cert.pem
+I0430 16:03:20.201779   31090 main.go:144] libmachine: Decoding PEM data...
+I0430 16:03:20.201796   31090 main.go:144] libmachine: Parsing certificate...
+I0430 16:03:20.203545   31090 cli_runner.go:164] Run: docker network inspect minikube --format "{"Name": "{{.Name}}","Driver": "{{.Driver}}","Subnet": "{{range .IPAM.Config}}{{.Subnet}}{{end}}","Gateway": "{{range .IPAM.Config}}{{.Gateway}}{{end}}","MTU": {{if (index .Options "com.docker.network.driver.mtu")}}{{(index .Options "com.docker.network.driver.mtu")}}{{else}}0{{end}}, "ContainerIPs": [{{range $k,$v := .Containers }}"{{$v.IPv4Address}}",{{end}}]}"
+W0430 16:03:20.405885   31090 cli_runner.go:211] docker network inspect minikube --format "{"Name": "{{.Name}}","Driver": "{{.Driver}}","Subnet": "{{range .IPAM.Config}}{{.Subnet}}{{end}}","Gateway": "{{range .IPAM.Config}}{{.Gateway}}{{end}}","MTU": {{if (index .Options "com.docker.network.driver.mtu")}}{{(index .Options "com.docker.network.driver.mtu")}}{{else}}0{{end}}, "ContainerIPs": [{{range $k,$v := .Containers }}"{{$v.IPv4Address}}",{{end}}]}" returned with exit code 1
+I0430 16:03:20.406051   31090 network_create.go:285] running [docker network inspect minikube] to gather additional debugging logs...
+I0430 16:03:20.406072   31090 cli_runner.go:164] Run: docker network inspect minikube
+W0430 16:03:20.601746   31090 cli_runner.go:211] docker network inspect minikube returned with exit code 1
+I0430 16:03:20.601790   31090 network_create.go:288] error running [docker network inspect minikube]: docker network inspect minikube: exit status 1
+stdout:
+[]
+
+stderr:
+WARNING: Error parsing config file (/home/arjun/.docker/config.json): invalid character 'c' looking for beginning of object key string
+Error response from daemon: network minikube not found
+I0430 16:03:20.601821   31090 network_create.go:290] output of [docker network inspect minikube]: -- stdout --
+[]
+
+-- /stdout --
+** stderr ** 
+WARNING: Error parsing config file (/home/arjun/.docker/config.json): invalid character 'c' looking for beginning of object key string
+Error response from daemon: network minikube not found
+
+** /stderr **
+I0430 16:03:20.602255   31090 cli_runner.go:164] Run: docker network inspect bridge --format "{"Name": "{{.Name}}","Driver": "{{.Driver}}","Subnet": "{{range .IPAM.Config}}{{.Subnet}}{{end}}","Gateway": "{{range .IPAM.Config}}{{.Gateway}}{{end}}","MTU": {{if (index .Options "com.docker.network.driver.mtu")}}{{(index .Options "com.docker.network.driver.mtu")}}{{else}}0{{end}}, "ContainerIPs": [{{range $k,$v := .Containers }}"{{$v.IPv4Address}}",{{end}}]}"
+I0430 16:03:20.810537   31090 network.go:205] using free private subnet 192.168.49.0/24: &{IP:192.168.49.0 Netmask:255.255.255.0 Prefix:24 CIDR:192.168.49.0/24 Gateway:192.168.49.1 ClientMin:192.168.49.2 ClientMax:192.168.49.254 Broadcast:192.168.49.255 IsPrivate:true Interface:{IfaceName: IfaceIPv4: IfaceMTU:0 IfaceMAC:} reservation:0xc00071c668}
+I0430 16:03:20.810594   31090 network_create.go:125] attempt to create docker network minikube 192.168.49.0/24 with gateway 192.168.49.1 and MTU of 1500 ...
+I0430 16:03:20.810677   31090 cli_runner.go:164] Run: docker network create --driver=bridge --subnet=192.168.49.0/24 --gateway=192.168.49.1 -o --ip-masq -o --icc -o com.docker.network.driver.mtu=1500 --label=created_by.minikube.sigs.k8s.io=true --label=name.minikube.sigs.k8s.io=minikube minikube
+I0430 16:03:21.143267   31090 network_create.go:109] docker network minikube 192.168.49.0/24 created
+I0430 16:03:21.143303   31090 kic.go:120] calculated static IP "192.168.49.2" for the "minikube" container
+I0430 16:03:21.143472   31090 cli_runner.go:164] Run: docker ps -a --format {{.Names}}
+I0430 16:03:21.343478   31090 cli_runner.go:164] Run: docker volume create minikube --label name.minikube.sigs.k8s.io=minikube --label created_by.minikube.sigs.k8s.io=true
+I0430 16:03:21.563472   31090 oci.go:102] Successfully created a docker volume minikube
+I0430 16:03:21.563606   31090 cli_runner.go:164] Run: docker run --rm --name minikube-preload-sidecar --label created_by.minikube.sigs.k8s.io=true --label name.minikube.sigs.k8s.io=minikube --entrypoint /usr/bin/test -v minikube:/var gcr.io/k8s-minikube/kicbase:v0.0.50@sha256:eb4fec00e8ad70adf8e6436f195cc429825ffb85f95afcdb5d8d9deb576f3e93 -d /var/lib
+I0430 16:03:22.945705   31090 cli_runner.go:217] Completed: docker run --rm --name minikube-preload-sidecar --label created_by.minikube.sigs.k8s.io=true --label name.minikube.sigs.k8s.io=minikube --entrypoint /usr/bin/test -v minikube:/var gcr.io/k8s-minikube/kicbase:v0.0.50@sha256:eb4fec00e8ad70adf8e6436f195cc429825ffb85f95afcdb5d8d9deb576f3e93 -d /var/lib: (1.382023965s)
+I0430 16:03:22.945733   31090 oci.go:106] Successfully prepared a docker volume minikube
+I0430 16:03:22.945819   31090 preload.go:187] Checking if preload exists for k8s version v1.35.1 and runtime docker
+I0430 16:03:22.945829   31090 kic.go:193] Starting extracting preloaded images to volume ...
+I0430 16:03:22.945916   31090 cli_runner.go:164] Run: docker run --rm --entrypoint /usr/bin/tar -v /home/arjun/.minikube/cache/preloaded-tarball/preloaded-images-k8s-v18-v1.35.1-docker-overlay2-amd64.tar.lz4:/preloaded.tar:ro -v minikube:/extractDir gcr.io/k8s-minikube/kicbase:v0.0.50@sha256:eb4fec00e8ad70adf8e6436f195cc429825ffb85f95afcdb5d8d9deb576f3e93 -I lz4 -xf /preloaded.tar -C /extractDir
+I0430 16:03:30.014408   31090 cli_runner.go:217] Completed: docker run --rm --entrypoint /usr/bin/tar -v /home/arjun/.minikube/cache/preloaded-tarball/preloaded-images-k8s-v18-v1.35.1-docker-overlay2-amd64.tar.lz4:/preloaded.tar:ro -v minikube:/extractDir gcr.io/k8s-minikube/kicbase:v0.0.50@sha256:eb4fec00e8ad70adf8e6436f195cc429825ffb85f95afcdb5d8d9deb576f3e93 -I lz4 -xf /preloaded.tar -C /extractDir: (7.068404639s)
+I0430 16:03:30.014440   31090 kic.go:202] duration metric: took 7.068603779s to extract preloaded images to volume ...
+W0430 16:03:30.014806   31090 cgroups_linux.go:77] Your kernel does not support swap limit capabilities or the cgroup is not mounted.
+W0430 16:03:30.014943   31090 oci.go:251] Your kernel does not support CPU cfs period/quota or the cgroup is not mounted.
+I0430 16:03:30.015057   31090 cli_runner.go:164] Run: docker info --format "'{{json .SecurityOptions}}'"
+I0430 16:03:30.246257   31090 cli_runner.go:164] Run: docker run -d -t --privileged --security-opt seccomp=unconfined --tmpfs /tmp --tmpfs /run -v /lib/modules:/lib/modules:ro --hostname minikube --name minikube --label created_by.minikube.sigs.k8s.io=true --label name.minikube.sigs.k8s.io=minikube --label role.minikube.sigs.k8s.io= --label mode.minikube.sigs.k8s.io=minikube --network minikube --ip 192.168.49.2 --volume minikube:/var --security-opt apparmor=unconfined --memory=3072mb -e container=docker --expose 8443 --publish=127.0.0.1::8443 --publish=127.0.0.1::22 --publish=127.0.0.1::2376 --publish=127.0.0.1::5000 --publish=127.0.0.1::32443 gcr.io/k8s-minikube/kicbase:v0.0.50@sha256:eb4fec00e8ad70adf8e6436f195cc429825ffb85f95afcdb5d8d9deb576f3e93
+I0430 16:03:31.092634   31090 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Running}}
+I0430 16:03:31.265995   31090 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+I0430 16:03:31.442063   31090 cli_runner.go:164] Run: docker exec minikube stat /var/lib/dpkg/alternatives/iptables
+I0430 16:03:31.674924   31090 oci.go:143] the created container "minikube" has a running status.
+I0430 16:03:31.674958   31090 kic.go:224] Creating ssh key for kic: /home/arjun/.minikube/machines/minikube/id_rsa...
+I0430 16:03:31.768484   31090 kic_runner.go:190] docker (temp): /home/arjun/.minikube/machines/minikube/id_rsa.pub --> /home/docker/.ssh/authorized_keys (381 bytes)
+I0430 16:03:31.988817   31090 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+I0430 16:03:32.125810   31090 kic_runner.go:92] Run: chown docker:docker /home/docker/.ssh/authorized_keys
+I0430 16:03:32.125823   31090 kic_runner.go:113] Args: [docker exec --privileged minikube chown docker:docker /home/docker/.ssh/authorized_keys]
+I0430 16:03:32.374698   31090 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+I0430 16:03:32.558606   31090 machine.go:96] provisionDockerMachine start ...
+I0430 16:03:32.558715   31090 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+I0430 16:03:32.735540   31090 main.go:144] libmachine: Using SSH client type: native
+I0430 16:03:32.735918   31090 main.go:144] libmachine: &{{{<nil> 0 [] [] []} docker [0x906360] 0x909000 <nil>  [] 0s} 127.0.0.1 32798 <nil> <nil>}
+I0430 16:03:32.735935   31090 main.go:144] libmachine: About to run SSH command:
+hostname
+I0430 16:03:32.924574   31090 main.go:144] libmachine: SSH cmd err, output: <nil>: minikube
+
+I0430 16:03:32.924708   31090 ubuntu.go:182] provisioning hostname "minikube"
+I0430 16:03:32.924859   31090 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+I0430 16:03:33.115461   31090 main.go:144] libmachine: Using SSH client type: native
+I0430 16:03:33.115799   31090 main.go:144] libmachine: &{{{<nil> 0 [] [] []} docker [0x906360] 0x909000 <nil>  [] 0s} 127.0.0.1 32798 <nil> <nil>}
+I0430 16:03:33.115805   31090 main.go:144] libmachine: About to run SSH command:
+sudo hostname minikube && echo "minikube" | sudo tee /etc/hostname
+I0430 16:03:33.358325   31090 main.go:144] libmachine: SSH cmd err, output: <nil>: minikube
+
+I0430 16:03:33.358415   31090 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+I0430 16:03:33.522728   31090 main.go:144] libmachine: Using SSH client type: native
+I0430 16:03:33.523108   31090 main.go:144] libmachine: &{{{<nil> 0 [] [] []} docker [0x906360] 0x909000 <nil>  [] 0s} 127.0.0.1 32798 <nil> <nil>}
+I0430 16:03:33.523126   31090 main.go:144] libmachine: About to run SSH command:
+
+		if ! grep -xq '.*\sminikube' /etc/hosts; then
+			if grep -xq '127.0.1.1\s.*' /etc/hosts; then
+				sudo sed -i 's/^127.0.1.1\s.*/127.0.1.1 minikube/g' /etc/hosts;
+			else 
+				echo '127.0.1.1 minikube' | sudo tee -a /etc/hosts; 
+			fi
+		fi
+I0430 16:03:33.696627   31090 main.go:144] libmachine: SSH cmd err, output: <nil>: 
+I0430 16:03:33.696649   31090 ubuntu.go:188] set auth options {CertDir:/home/arjun/.minikube CaCertPath:/home/arjun/.minikube/certs/ca.pem CaPrivateKeyPath:/home/arjun/.minikube/certs/ca-key.pem CaCertRemotePath:/etc/docker/ca.pem ServerCertPath:/home/arjun/.minikube/machines/server.pem ServerKeyPath:/home/arjun/.minikube/machines/server-key.pem ClientKeyPath:/home/arjun/.minikube/certs/key.pem ServerCertRemotePath:/etc/docker/server.pem ServerKeyRemotePath:/etc/docker/server-key.pem ClientCertPath:/home/arjun/.minikube/certs/cert.pem ServerCertSANs:[] StorePath:/home/arjun/.minikube}
+I0430 16:03:33.696672   31090 ubuntu.go:190] setting up certificates
+I0430 16:03:33.696682   31090 provision.go:83] configureAuth start
+I0430 16:03:33.696774   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:03:33.846238   31090 provision.go:86] duration metric: took 149.497795ms to configureAuth
+W0430 16:03:33.846272   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:03:33.846345   31090 retry.go:85] will retry after 0s: Temporary Error: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:03:33.846505   31090 provision.go:83] configureAuth start
+I0430 16:03:33.846633   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:03:34.000873   31090 provision.go:86] duration metric: took 154.346321ms to configureAuth
+W0430 16:03:34.000893   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:03:34.001133   31090 provision.go:83] configureAuth start
+I0430 16:03:34.001277   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:03:34.169960   31090 provision.go:86] duration metric: took 168.796667ms to configureAuth
+W0430 16:03:34.169983   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:03:34.171249   31090 provision.go:83] configureAuth start
+I0430 16:03:34.171345   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:03:34.321036   31090 provision.go:86] duration metric: took 149.763364ms to configureAuth
+W0430 16:03:34.321049   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:03:34.322272   31090 provision.go:83] configureAuth start
+I0430 16:03:34.322354   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:03:34.485708   31090 provision.go:86] duration metric: took 163.405786ms to configureAuth
+W0430 16:03:34.485733   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:03:34.487097   31090 provision.go:83] configureAuth start
+I0430 16:03:34.487259   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:03:34.656694   31090 provision.go:86] duration metric: took 169.565185ms to configureAuth
+W0430 16:03:34.656715   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:03:34.658025   31090 provision.go:83] configureAuth start
+I0430 16:03:34.658163   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:03:34.847728   31090 provision.go:86] duration metric: took 189.676407ms to configureAuth
+W0430 16:03:34.847754   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:03:34.849058   31090 provision.go:83] configureAuth start
+I0430 16:03:34.849161   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:03:35.045732   31090 provision.go:86] duration metric: took 196.650874ms to configureAuth
+W0430 16:03:35.045751   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:03:35.047144   31090 provision.go:83] configureAuth start
+I0430 16:03:35.047333   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:03:35.263449   31090 provision.go:86] duration metric: took 216.278242ms to configureAuth
+W0430 16:03:35.263466   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:03:35.266024   31090 provision.go:83] configureAuth start
+I0430 16:03:35.266169   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:03:35.467897   31090 provision.go:86] duration metric: took 201.845238ms to configureAuth
+W0430 16:03:35.467916   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:03:35.473498   31090 provision.go:83] configureAuth start
+I0430 16:03:35.473644   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:03:35.659209   31090 provision.go:86] duration metric: took 185.68227ms to configureAuth
+W0430 16:03:35.659227   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:03:35.665772   31090 provision.go:83] configureAuth start
+I0430 16:03:35.665951   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:03:35.861999   31090 provision.go:86] duration metric: took 196.202322ms to configureAuth
+W0430 16:03:35.862013   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:03:35.872606   31090 provision.go:83] configureAuth start
+I0430 16:03:35.872831   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:03:36.066285   31090 provision.go:86] duration metric: took 193.653794ms to configureAuth
+W0430 16:03:36.066300   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:03:36.074858   31090 provision.go:83] configureAuth start
+I0430 16:03:36.075000   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:03:36.264431   31090 provision.go:86] duration metric: took 189.550213ms to configureAuth
+W0430 16:03:36.264446   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:03:36.291050   31090 provision.go:83] configureAuth start
+I0430 16:03:36.291240   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:03:36.490557   31090 provision.go:86] duration metric: took 199.476457ms to configureAuth
+W0430 16:03:36.490584   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:03:36.529066   31090 provision.go:83] configureAuth start
+I0430 16:03:36.529321   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:03:36.732157   31090 provision.go:86] duration metric: took 203.064983ms to configureAuth
+W0430 16:03:36.732171   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:03:36.768530   31090 provision.go:83] configureAuth start
+I0430 16:03:36.768772   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:03:36.971011   31090 provision.go:86] duration metric: took 202.442474ms to configureAuth
+W0430 16:03:36.971032   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:03:37.017659   31090 provision.go:83] configureAuth start
+I0430 16:03:37.017862   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:03:37.215363   31090 provision.go:86] duration metric: took 197.652719ms to configureAuth
+W0430 16:03:37.215377   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:03:37.272610   31090 provision.go:83] configureAuth start
+I0430 16:03:37.272885   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:03:37.531244   31090 provision.go:86] duration metric: took 258.576919ms to configureAuth
+W0430 16:03:37.531259   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:03:37.668368   31090 provision.go:83] configureAuth start
+I0430 16:03:37.668500   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:03:37.859408   31090 provision.go:86] duration metric: took 191.013956ms to configureAuth
+W0430 16:03:37.859429   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:03:38.187493   31090 provision.go:83] configureAuth start
+I0430 16:03:38.187675   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:03:38.377616   31090 provision.go:86] duration metric: took 190.088554ms to configureAuth
+W0430 16:03:38.377638   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:03:38.820119   31090 provision.go:83] configureAuth start
+I0430 16:03:38.820556   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:03:39.041817   31090 provision.go:86] duration metric: took 221.62032ms to configureAuth
+W0430 16:03:39.041834   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:03:39.666584   31090 provision.go:83] configureAuth start
+I0430 16:03:39.666941   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:03:39.883273   31090 provision.go:86] duration metric: took 216.652686ms to configureAuth
+W0430 16:03:39.883314   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:03:40.912745   31090 provision.go:83] configureAuth start
+I0430 16:03:40.913186   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:03:41.140686   31090 provision.go:86] duration metric: took 227.900644ms to configureAuth
+W0430 16:03:41.140709   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:03:41.787124   31090 provision.go:83] configureAuth start
+I0430 16:03:41.787351   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:03:42.007341   31090 provision.go:86] duration metric: took 220.179023ms to configureAuth
+W0430 16:03:42.007361   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:03:43.109022   31090 provision.go:83] configureAuth start
+I0430 16:03:43.109266   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:03:43.345664   31090 provision.go:86] duration metric: took 236.597634ms to configureAuth
+W0430 16:03:43.345693   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:03:45.228223   31090 provision.go:83] configureAuth start
+I0430 16:03:45.228682   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:03:45.449088   31090 provision.go:86] duration metric: took 220.80396ms to configureAuth
+W0430 16:03:45.449111   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:03:49.455055   31090 provision.go:83] configureAuth start
+I0430 16:03:49.455299   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:03:49.691859   31090 provision.go:86] duration metric: took 236.754635ms to configureAuth
+W0430 16:03:49.691882   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:03:49.691918   31090 retry.go:85] will retry after 5.4s: Temporary Error: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:03:55.117091   31090 provision.go:83] configureAuth start
+I0430 16:03:55.117550   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:03:55.366685   31090 provision.go:86] duration metric: took 249.553237ms to configureAuth
+W0430 16:03:55.366720   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:03:55.366749   31090 retry.go:85] will retry after 5.3s: Temporary Error: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:04:00.684021   31090 provision.go:83] configureAuth start
+I0430 16:04:00.684211   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:04:00.903907   31090 provision.go:86] duration metric: took 219.848284ms to configureAuth
+W0430 16:04:00.903936   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:04:00.904048   31090 retry.go:85] will retry after 10.8s: Temporary Error: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:04:11.684217   31090 provision.go:83] configureAuth start
+I0430 16:04:11.684386   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:04:11.898346   31090 provision.go:86] duration metric: took 214.076691ms to configureAuth
+W0430 16:04:11.898368   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:04:11.898401   31090 retry.go:85] will retry after 14s: Temporary Error: error getting ip during provisioning: IPs output should only be one line, got 2 lines (duplicate log for 38.1s)
+I0430 16:04:25.914268   31090 provision.go:83] configureAuth start
+I0430 16:04:25.914710   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:04:26.144032   31090 provision.go:86] duration metric: took 229.727318ms to configureAuth
+W0430 16:04:26.144061   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:04:26.144094   31090 retry.go:75] will retry after 24.2s: stuck on same error as above for 52.3s...
+I0430 16:04:50.302874   31090 provision.go:83] configureAuth start
+I0430 16:04:50.303390   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:04:50.558346   31090 provision.go:86] duration metric: took 255.3365ms to configureAuth
+W0430 16:04:50.558372   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:04:50.558404   31090 ubuntu.go:202] Error configuring auth during provisioning Temporary Error: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:04:50.558413   31090 machine.go:99] duration metric: took 1m17.999792578s to provisionDockerMachine
+I0430 16:04:50.558472   31090 client.go:176] duration metric: took 1m30.357227186s to LocalClient.Create
+I0430 16:04:52.559530   31090 ssh_runner.go:194] Run: sh -c "df -h /var | awk 'NR==2{print $5}'"
+I0430 16:04:52.559650   31090 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+I0430 16:04:52.757672   31090 sshutil.go:53] new ssh client: &{IP:127.0.0.1 Port:32798 SSHKeyPath:/home/arjun/.minikube/machines/minikube/id_rsa Username:docker}
+I0430 16:04:52.927230   31090 ssh_runner.go:194] Run: sh -c "df -BG /var | awk 'NR==2{print $4}'"
+I0430 16:04:52.940187   31090 start.go:127] duration metric: took 1m32.744279707s to createHost
+I0430 16:04:52.940244   31090 start.go:82] releasing machines lock for "minikube", held for 1m32.744426628s
+W0430 16:04:52.940377   31090 start.go:726] error starting host: creating host: create: provisioning: Temporary Error: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:04:52.941145   31090 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+I0430 16:04:53.188856   31090 stop.go:39] StopHost: minikube
+W0430 16:04:53.189403   31090 register.go:133] "Stopping" was not found within the registered steps for "Initial Minikube Setup": [Initial Minikube Setup Selecting Driver Downloading Artifacts Starting Node Updating Driver Pulling Base Image Running on Localhost Local OS Release Creating Container Creating VM Running Remotely Preparing Kubernetes Generating certificates Booting control plane Configuring RBAC rules Configuring CNI Configuring Localhost Environment Verifying Kubernetes Enabling Addons Done]
+I0430 16:04:53.206658   31090 out.go:179] ✋  Stopping node "minikube"  ...
+I0430 16:04:53.211055   31090 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+W0430 16:04:53.429178   31090 register.go:133] "PowerOff" was not found within the registered steps for "Initial Minikube Setup": [Initial Minikube Setup Selecting Driver Downloading Artifacts Starting Node Updating Driver Pulling Base Image Running on Localhost Local OS Release Creating Container Creating VM Running Remotely Preparing Kubernetes Generating certificates Booting control plane Configuring RBAC rules Configuring CNI Configuring Localhost Environment Verifying Kubernetes Enabling Addons Done]
+I0430 16:04:53.460212   31090 out.go:179] 🛑  Powering off "minikube" via SSH ...
+I0430 16:04:53.477178   31090 cli_runner.go:164] Run: docker exec --privileged -t minikube /bin/bash -c "sudo init 0"
+I0430 16:04:55.015159   31090 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+I0430 16:04:55.388346   31090 oci.go:666] container minikube status is Stopped
+I0430 16:04:55.388379   31090 oci.go:678] Successfully shutdown container minikube
+I0430 16:04:55.388389   31090 stop.go:96] shutdown container: err=<nil>
+I0430 16:04:55.388421   31090 main.go:144] libmachine: Stopping "minikube"...
+I0430 16:04:55.388756   31090 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+I0430 16:04:55.571976   31090 stop.go:66] stop err: Machine "minikube" is already stopped.
+I0430 16:04:55.572042   31090 stop.go:69] host is already stopped
+W0430 16:04:56.573030   31090 register.go:133] "PowerOff" was not found within the registered steps for "Initial Minikube Setup": [Initial Minikube Setup Selecting Driver Downloading Artifacts Starting Node Updating Driver Pulling Base Image Running on Localhost Local OS Release Creating Container Creating VM Running Remotely Preparing Kubernetes Generating certificates Booting control plane Configuring RBAC rules Configuring CNI Configuring Localhost Environment Verifying Kubernetes Enabling Addons Done]
+I0430 16:04:56.591990   31090 out.go:179] 🔥  Deleting "minikube" in docker ...
+I0430 16:04:56.596183   31090 cli_runner.go:164] Run: docker container inspect -f {{.Id}} minikube
+I0430 16:04:56.815736   31090 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+I0430 16:04:57.014314   31090 cli_runner.go:164] Run: docker exec --privileged -t minikube /bin/bash -c "sudo init 0"
+W0430 16:04:57.215271   31090 cli_runner.go:211] docker exec --privileged -t minikube /bin/bash -c "sudo init 0" returned with exit code 1
+I0430 16:04:57.215335   31090 oci.go:658] error shutdown minikube: docker exec --privileged -t minikube /bin/bash -c "sudo init 0": exit status 1
+stdout:
+
+stderr:
+WARNING: Error parsing config file (/home/arjun/.docker/config.json): invalid character 'c' looking for beginning of object key string
+Error response from daemon: container d262c92d864a086287b255c67bb91ee3ab1f8a04ca5ad09b30a21912e71e6f59 is not running
+I0430 16:04:58.215987   31090 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+I0430 16:04:58.398230   31090 oci.go:666] container minikube status is Stopped
+I0430 16:04:58.398270   31090 oci.go:678] Successfully shutdown container minikube
+I0430 16:04:58.398386   31090 cli_runner.go:164] Run: docker rm -f -v minikube
+I0430 16:04:58.590782   31090 cli_runner.go:164] Run: docker container inspect -f {{.Id}} minikube
+W0430 16:04:58.768482   31090 cli_runner.go:211] docker container inspect -f {{.Id}} minikube returned with exit code 1
+I0430 16:04:58.768660   31090 cli_runner.go:164] Run: docker network inspect minikube --format "{"Name": "{{.Name}}","Driver": "{{.Driver}}","Subnet": "{{range .IPAM.Config}}{{.Subnet}}{{end}}","Gateway": "{{range .IPAM.Config}}{{.Gateway}}{{end}}","MTU": {{if (index .Options "com.docker.network.driver.mtu")}}{{(index .Options "com.docker.network.driver.mtu")}}{{else}}0{{end}}, "ContainerIPs": [{{range $k,$v := .Containers }}"{{$v.IPv4Address}}",{{end}}]}"
+I0430 16:04:58.993908   31090 cli_runner.go:164] Run: docker network rm minikube
+W0430 16:04:59.584939   31090 out.go:285] 🤦  StartHost failed, but will try again: creating host: create: provisioning: Temporary Error: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:04:59.585067   31090 start.go:742] Will try again in 5 seconds ...
+I0430 16:05:04.585879   31090 start.go:359] acquireMachinesLock for minikube: {Name:mk3e9c6e6bbaccca25c6a01324d3a6f56cad9dc5 Timeout:10m0s Delay:500ms}
+I0430 16:05:04.586056   31090 start.go:363] duration metric: took 139.276µs to acquireMachinesLock for "minikube"
+I0430 16:05:04.586204   31090 start.go:92] Provisioning new machine with config: &{Name:minikube KeepContext:false EmbedCerts:false MinikubeISO: KicBaseImage:gcr.io/k8s-minikube/kicbase:v0.0.50@sha256:eb4fec00e8ad70adf8e6436f195cc429825ffb85f95afcdb5d8d9deb576f3e93 Memory:3072 CPUs:2 DiskSize:20000 Driver:docker HyperkitVpnKitSock: HyperkitVSockPorts:[] DockerEnv:[default-address-pools=[{"base":"192.168.49.0/24","size":24}]] ContainerVolumeMounts:[] InsecureRegistry:[] RegistryMirror:[] HostOnlyCIDR:192.168.59.1/24 HypervVirtualSwitch: HypervUseExternalSwitch:false HypervExternalAdapter: KVMNetwork:default KVMQemuURI:qemu:///system KVMGPU:false KVMHidden:false KVMNUMACount:1 APIServerPort:8443 DockerOpt:[] DisableDriverMounts:false NFSShare:[] NFSSharesRoot:/nfsshares UUID: NoVTXCheck:false DNSProxy:false HostDNSResolver:true HostOnlyNicType:virtio NatNicType:virtio SSHIPAddress: SSHUser:root SSHKey: SSHPort:22 KubernetesConfig:{KubernetesVersion:v1.35.1 ClusterName:minikube Namespace:default APIServerHAVIP: APIServerName:minikubeCA APIServerNames:[] APIServerIPs:[] DNSDomain:cluster.local ContainerRuntime:docker CRISocket: NetworkPlugin:cni FeatureGates: ServiceCIDR:10.96.0.0/12 ImageRepository: LoadBalancerStartIP: LoadBalancerEndIP: CustomIngressCert: RegistryAliases: ExtraOptions:[] ShouldLoadCachedImages:true EnableDefaultCNI:false CNI:} Nodes:[{Name: IP: Port:8443 KubernetesVersion:v1.35.1 ContainerRuntime:docker ControlPlane:true Worker:true}] Addons:map[] CustomAddonImages:map[] CustomAddonRegistries:map[] VerifyComponents:map[apiserver:true system_pods:true] StartHostTimeout:6m0s ScheduledStop:<nil> ExposedPorts:[] ListenAddress: Network: Subnet: MultiNodeRequested:false ExtraDisks:0 CertExpiration:26280h0m0s MountString: Mount9PVersion:9p2000.L MountGID:docker MountIP: MountMSize:262144 MountOptions:[] MountPort:0 MountType:9p MountUID:docker BinaryMirror: DisableOptimizations:false DisableMetrics:false DisableCoreDNSLog:false CustomQemuFirmwarePath: SocketVMnetClientPath: SocketVMnetPath: StaticIP: SSHAuthSock: SSHAgentPID:0 GPUs: AutoPauseInterval:1m0s Rosetta:false} &{Name: IP: Port:8443 KubernetesVersion:v1.35.1 ContainerRuntime:docker ControlPlane:true Worker:true}
+I0430 16:05:04.586614   31090 start.go:124] createHost starting for "" (driver="docker")
+I0430 16:05:04.612998   31090 out.go:252] 🔥  Creating docker container (CPUs=2, Memory=3072MB) ...
+I0430 16:05:04.613705   31090 start.go:158] libmachine.API.Create for "minikube" (driver="docker")
+I0430 16:05:04.613837   31090 client.go:173] LocalClient.Create starting
+I0430 16:05:04.614029   31090 main.go:144] libmachine: Reading certificate data from /home/arjun/.minikube/certs/ca.pem
+I0430 16:05:04.614380   31090 main.go:144] libmachine: Decoding PEM data...
+I0430 16:05:04.614420   31090 main.go:144] libmachine: Parsing certificate...
+I0430 16:05:04.614648   31090 main.go:144] libmachine: Reading certificate data from /home/arjun/.minikube/certs/cert.pem
+I0430 16:05:04.614757   31090 main.go:144] libmachine: Decoding PEM data...
+I0430 16:05:04.614851   31090 main.go:144] libmachine: Parsing certificate...
+I0430 16:05:04.616668   31090 cli_runner.go:164] Run: docker network inspect minikube --format "{"Name": "{{.Name}}","Driver": "{{.Driver}}","Subnet": "{{range .IPAM.Config}}{{.Subnet}}{{end}}","Gateway": "{{range .IPAM.Config}}{{.Gateway}}{{end}}","MTU": {{if (index .Options "com.docker.network.driver.mtu")}}{{(index .Options "com.docker.network.driver.mtu")}}{{else}}0{{end}}, "ContainerIPs": [{{range $k,$v := .Containers }}"{{$v.IPv4Address}}",{{end}}]}"
+W0430 16:05:04.849814   31090 cli_runner.go:211] docker network inspect minikube --format "{"Name": "{{.Name}}","Driver": "{{.Driver}}","Subnet": "{{range .IPAM.Config}}{{.Subnet}}{{end}}","Gateway": "{{range .IPAM.Config}}{{.Gateway}}{{end}}","MTU": {{if (index .Options "com.docker.network.driver.mtu")}}{{(index .Options "com.docker.network.driver.mtu")}}{{else}}0{{end}}, "ContainerIPs": [{{range $k,$v := .Containers }}"{{$v.IPv4Address}}",{{end}}]}" returned with exit code 1
+I0430 16:05:04.850051   31090 network_create.go:285] running [docker network inspect minikube] to gather additional debugging logs...
+I0430 16:05:04.850082   31090 cli_runner.go:164] Run: docker network inspect minikube
+W0430 16:05:05.090633   31090 cli_runner.go:211] docker network inspect minikube returned with exit code 1
+I0430 16:05:05.090760   31090 network_create.go:288] error running [docker network inspect minikube]: docker network inspect minikube: exit status 1
+stdout:
+[]
+
+stderr:
+WARNING: Error parsing config file (/home/arjun/.docker/config.json): invalid character 'c' looking for beginning of object key string
+Error response from daemon: network minikube not found
+I0430 16:05:05.090781   31090 network_create.go:290] output of [docker network inspect minikube]: -- stdout --
+[]
+
+-- /stdout --
+** stderr ** 
+WARNING: Error parsing config file (/home/arjun/.docker/config.json): invalid character 'c' looking for beginning of object key string
+Error response from daemon: network minikube not found
+
+** /stderr **
+I0430 16:05:05.091056   31090 cli_runner.go:164] Run: docker network inspect bridge --format "{"Name": "{{.Name}}","Driver": "{{.Driver}}","Subnet": "{{range .IPAM.Config}}{{.Subnet}}{{end}}","Gateway": "{{range .IPAM.Config}}{{.Gateway}}{{end}}","MTU": {{if (index .Options "com.docker.network.driver.mtu")}}{{(index .Options "com.docker.network.driver.mtu")}}{{else}}0{{end}}, "ContainerIPs": [{{range $k,$v := .Containers }}"{{$v.IPv4Address}}",{{end}}]}"
+I0430 16:05:05.321763   31090 network.go:205] using free private subnet 192.168.49.0/24: &{IP:192.168.49.0 Netmask:255.255.255.0 Prefix:24 CIDR:192.168.49.0/24 Gateway:192.168.49.1 ClientMin:192.168.49.2 ClientMax:192.168.49.254 Broadcast:192.168.49.255 IsPrivate:true Interface:{IfaceName: IfaceIPv4: IfaceMTU:0 IfaceMAC:} reservation:0xc001d04008}
+I0430 16:05:05.321892   31090 network_create.go:125] attempt to create docker network minikube 192.168.49.0/24 with gateway 192.168.49.1 and MTU of 1500 ...
+I0430 16:05:05.322197   31090 cli_runner.go:164] Run: docker network create --driver=bridge --subnet=192.168.49.0/24 --gateway=192.168.49.1 -o --ip-masq -o --icc -o com.docker.network.driver.mtu=1500 --label=created_by.minikube.sigs.k8s.io=true --label=name.minikube.sigs.k8s.io=minikube minikube
+I0430 16:05:05.661604   31090 network_create.go:109] docker network minikube 192.168.49.0/24 created
+I0430 16:05:05.661653   31090 kic.go:120] calculated static IP "192.168.49.2" for the "minikube" container
+I0430 16:05:05.661818   31090 cli_runner.go:164] Run: docker ps -a --format {{.Names}}
+I0430 16:05:05.874886   31090 cli_runner.go:164] Run: docker volume create minikube --label name.minikube.sigs.k8s.io=minikube --label created_by.minikube.sigs.k8s.io=true
+I0430 16:05:06.113647   31090 oci.go:102] Successfully created a docker volume minikube
+I0430 16:05:06.113913   31090 cli_runner.go:164] Run: docker run --rm --name minikube-preload-sidecar --label created_by.minikube.sigs.k8s.io=true --label name.minikube.sigs.k8s.io=minikube --entrypoint /usr/bin/test -v minikube:/var gcr.io/k8s-minikube/kicbase:v0.0.50@sha256:eb4fec00e8ad70adf8e6436f195cc429825ffb85f95afcdb5d8d9deb576f3e93 -d /var/lib
+I0430 16:05:07.161080   31090 cli_runner.go:217] Completed: docker run --rm --name minikube-preload-sidecar --label created_by.minikube.sigs.k8s.io=true --label name.minikube.sigs.k8s.io=minikube --entrypoint /usr/bin/test -v minikube:/var gcr.io/k8s-minikube/kicbase:v0.0.50@sha256:eb4fec00e8ad70adf8e6436f195cc429825ffb85f95afcdb5d8d9deb576f3e93 -d /var/lib: (1.046887736s)
+I0430 16:05:07.161112   31090 oci.go:106] Successfully prepared a docker volume minikube
+I0430 16:05:07.161238   31090 preload.go:187] Checking if preload exists for k8s version v1.35.1 and runtime docker
+I0430 16:05:07.161260   31090 kic.go:193] Starting extracting preloaded images to volume ...
+I0430 16:05:07.161550   31090 cli_runner.go:164] Run: docker run --rm --entrypoint /usr/bin/tar -v /home/arjun/.minikube/cache/preloaded-tarball/preloaded-images-k8s-v18-v1.35.1-docker-overlay2-amd64.tar.lz4:/preloaded.tar:ro -v minikube:/extractDir gcr.io/k8s-minikube/kicbase:v0.0.50@sha256:eb4fec00e8ad70adf8e6436f195cc429825ffb85f95afcdb5d8d9deb576f3e93 -I lz4 -xf /preloaded.tar -C /extractDir
+I0430 16:05:14.710074   31090 cli_runner.go:217] Completed: docker run --rm --entrypoint /usr/bin/tar -v /home/arjun/.minikube/cache/preloaded-tarball/preloaded-images-k8s-v18-v1.35.1-docker-overlay2-amd64.tar.lz4:/preloaded.tar:ro -v minikube:/extractDir gcr.io/k8s-minikube/kicbase:v0.0.50@sha256:eb4fec00e8ad70adf8e6436f195cc429825ffb85f95afcdb5d8d9deb576f3e93 -I lz4 -xf /preloaded.tar -C /extractDir: (7.548456087s)
+I0430 16:05:14.710104   31090 kic.go:202] duration metric: took 7.548842725s to extract preloaded images to volume ...
+W0430 16:05:14.710295   31090 cgroups_linux.go:77] Your kernel does not support swap limit capabilities or the cgroup is not mounted.
+W0430 16:05:14.710351   31090 oci.go:251] Your kernel does not support CPU cfs period/quota or the cgroup is not mounted.
+I0430 16:05:14.710436   31090 cli_runner.go:164] Run: docker info --format "'{{json .SecurityOptions}}'"
+I0430 16:05:15.007716   31090 cli_runner.go:164] Run: docker run -d -t --privileged --security-opt seccomp=unconfined --tmpfs /tmp --tmpfs /run -v /lib/modules:/lib/modules:ro --hostname minikube --name minikube --label created_by.minikube.sigs.k8s.io=true --label name.minikube.sigs.k8s.io=minikube --label role.minikube.sigs.k8s.io= --label mode.minikube.sigs.k8s.io=minikube --network minikube --ip 192.168.49.2 --volume minikube:/var --security-opt apparmor=unconfined --memory=3072mb -e container=docker --expose 8443 --publish=127.0.0.1::8443 --publish=127.0.0.1::22 --publish=127.0.0.1::2376 --publish=127.0.0.1::5000 --publish=127.0.0.1::32443 gcr.io/k8s-minikube/kicbase:v0.0.50@sha256:eb4fec00e8ad70adf8e6436f195cc429825ffb85f95afcdb5d8d9deb576f3e93
+I0430 16:05:15.998332   31090 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Running}}
+I0430 16:05:16.210235   31090 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+I0430 16:05:16.452711   31090 cli_runner.go:164] Run: docker exec minikube stat /var/lib/dpkg/alternatives/iptables
+I0430 16:05:16.791226   31090 oci.go:143] the created container "minikube" has a running status.
+I0430 16:05:16.791313   31090 kic.go:224] Creating ssh key for kic: /home/arjun/.minikube/machines/minikube/id_rsa...
+I0430 16:05:16.870748   31090 kic_runner.go:190] docker (temp): /home/arjun/.minikube/machines/minikube/id_rsa.pub --> /home/docker/.ssh/authorized_keys (381 bytes)
+I0430 16:05:17.099892   31090 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+I0430 16:05:17.312542   31090 kic_runner.go:92] Run: chown docker:docker /home/docker/.ssh/authorized_keys
+I0430 16:05:17.312560   31090 kic_runner.go:113] Args: [docker exec --privileged minikube chown docker:docker /home/docker/.ssh/authorized_keys]
+I0430 16:05:17.632538   31090 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+I0430 16:05:17.880662   31090 machine.go:96] provisionDockerMachine start ...
+I0430 16:05:17.880793   31090 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+I0430 16:05:18.085945   31090 main.go:144] libmachine: Using SSH client type: native
+I0430 16:05:18.086424   31090 main.go:144] libmachine: &{{{<nil> 0 [] [] []} docker [0x906360] 0x909000 <nil>  [] 0s} 127.0.0.1 32803 <nil> <nil>}
+I0430 16:05:18.086435   31090 main.go:144] libmachine: About to run SSH command:
+hostname
+I0430 16:05:18.308094   31090 main.go:144] libmachine: SSH cmd err, output: <nil>: minikube
+
+I0430 16:05:18.308126   31090 ubuntu.go:182] provisioning hostname "minikube"
+I0430 16:05:18.308264   31090 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+I0430 16:05:18.543040   31090 main.go:144] libmachine: Using SSH client type: native
+I0430 16:05:18.543447   31090 main.go:144] libmachine: &{{{<nil> 0 [] [] []} docker [0x906360] 0x909000 <nil>  [] 0s} 127.0.0.1 32803 <nil> <nil>}
+I0430 16:05:18.543459   31090 main.go:144] libmachine: About to run SSH command:
+sudo hostname minikube && echo "minikube" | sudo tee /etc/hostname
+I0430 16:05:18.777509   31090 main.go:144] libmachine: SSH cmd err, output: <nil>: minikube
+
+I0430 16:05:18.777660   31090 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+I0430 16:05:18.970029   31090 main.go:144] libmachine: Using SSH client type: native
+I0430 16:05:18.970493   31090 main.go:144] libmachine: &{{{<nil> 0 [] [] []} docker [0x906360] 0x909000 <nil>  [] 0s} 127.0.0.1 32803 <nil> <nil>}
+I0430 16:05:18.970517   31090 main.go:144] libmachine: About to run SSH command:
+
+		if ! grep -xq '.*\sminikube' /etc/hosts; then
+			if grep -xq '127.0.1.1\s.*' /etc/hosts; then
+				sudo sed -i 's/^127.0.1.1\s.*/127.0.1.1 minikube/g' /etc/hosts;
+			else 
+				echo '127.0.1.1 minikube' | sudo tee -a /etc/hosts; 
+			fi
+		fi
+I0430 16:05:19.177163   31090 main.go:144] libmachine: SSH cmd err, output: <nil>: 
+I0430 16:05:19.177184   31090 ubuntu.go:188] set auth options {CertDir:/home/arjun/.minikube CaCertPath:/home/arjun/.minikube/certs/ca.pem CaPrivateKeyPath:/home/arjun/.minikube/certs/ca-key.pem CaCertRemotePath:/etc/docker/ca.pem ServerCertPath:/home/arjun/.minikube/machines/server.pem ServerKeyPath:/home/arjun/.minikube/machines/server-key.pem ClientKeyPath:/home/arjun/.minikube/certs/key.pem ServerCertRemotePath:/etc/docker/server.pem ServerKeyRemotePath:/etc/docker/server-key.pem ClientCertPath:/home/arjun/.minikube/certs/cert.pem ServerCertSANs:[] StorePath:/home/arjun/.minikube}
+I0430 16:05:19.177199   31090 ubuntu.go:190] setting up certificates
+I0430 16:05:19.177315   31090 provision.go:83] configureAuth start
+I0430 16:05:19.177509   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:05:19.362059   31090 provision.go:86] duration metric: took 184.723362ms to configureAuth
+W0430 16:05:19.362075   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:05:19.362099   31090 retry.go:75] will retry after 0s: stuck on same error as above for 1m45.5s...
+I0430 16:05:19.362275   31090 provision.go:83] configureAuth start
+I0430 16:05:19.362434   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:05:19.563973   31090 provision.go:86] duration metric: took 201.672985ms to configureAuth
+W0430 16:05:19.563990   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:05:19.565308   31090 provision.go:83] configureAuth start
+I0430 16:05:19.565569   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:05:19.764183   31090 provision.go:86] duration metric: took 198.852895ms to configureAuth
+W0430 16:05:19.764198   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:05:19.765530   31090 provision.go:83] configureAuth start
+I0430 16:05:19.765667   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:05:19.940944   31090 provision.go:86] duration metric: took 175.391283ms to configureAuth
+W0430 16:05:19.940963   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:05:19.942238   31090 provision.go:83] configureAuth start
+I0430 16:05:19.942356   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:05:20.145583   31090 provision.go:86] duration metric: took 203.320365ms to configureAuth
+W0430 16:05:20.145604   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:05:20.147042   31090 provision.go:83] configureAuth start
+I0430 16:05:20.147158   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:05:20.338111   31090 provision.go:86] duration metric: took 191.047929ms to configureAuth
+W0430 16:05:20.338127   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:05:20.339423   31090 provision.go:83] configureAuth start
+I0430 16:05:20.339537   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:05:20.534315   31090 provision.go:86] duration metric: took 194.868206ms to configureAuth
+W0430 16:05:20.534335   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:05:20.535759   31090 provision.go:83] configureAuth start
+I0430 16:05:20.535889   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:05:20.726348   31090 provision.go:86] duration metric: took 190.565807ms to configureAuth
+W0430 16:05:20.726363   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:05:20.727700   31090 provision.go:83] configureAuth start
+I0430 16:05:20.727800   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:05:20.914971   31090 provision.go:86] duration metric: took 187.207093ms to configureAuth
+W0430 16:05:20.914993   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:05:20.918525   31090 provision.go:83] configureAuth start
+I0430 16:05:20.918664   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:05:21.119343   31090 provision.go:86] duration metric: took 200.794903ms to configureAuth
+W0430 16:05:21.119367   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:05:21.124770   31090 provision.go:83] configureAuth start
+I0430 16:05:21.124941   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:05:21.310519   31090 provision.go:86] duration metric: took 185.721315ms to configureAuth
+W0430 16:05:21.310540   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:05:21.317936   31090 provision.go:83] configureAuth start
+I0430 16:05:21.318134   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:05:21.487154   31090 provision.go:86] duration metric: took 169.190109ms to configureAuth
+W0430 16:05:21.487169   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:05:21.498869   31090 provision.go:83] configureAuth start
+I0430 16:05:21.499069   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:05:21.720788   31090 provision.go:86] duration metric: took 221.891694ms to configureAuth
+W0430 16:05:21.720802   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:05:21.728383   31090 provision.go:83] configureAuth start
+I0430 16:05:21.728488   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:05:21.926424   31090 provision.go:86] duration metric: took 198.010935ms to configureAuth
+W0430 16:05:21.926442   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:05:21.939075   31090 provision.go:83] configureAuth start
+I0430 16:05:21.939249   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:05:22.133786   31090 provision.go:86] duration metric: took 194.689282ms to configureAuth
+W0430 16:05:22.133798   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:05:22.152137   31090 provision.go:83] configureAuth start
+I0430 16:05:22.152259   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:05:22.337869   31090 provision.go:86] duration metric: took 185.701046ms to configureAuth
+W0430 16:05:22.337892   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:05:22.390927   31090 provision.go:83] configureAuth start
+I0430 16:05:22.391074   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:05:22.556875   31090 provision.go:86] duration metric: took 165.920433ms to configureAuth
+W0430 16:05:22.556891   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:05:22.645803   31090 provision.go:83] configureAuth start
+I0430 16:05:22.646116   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:05:22.846467   31090 provision.go:86] duration metric: took 200.626978ms to configureAuth
+W0430 16:05:22.846488   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:05:22.952979   31090 provision.go:83] configureAuth start
+I0430 16:05:22.953299   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:05:23.148265   31090 provision.go:86] duration metric: took 195.250655ms to configureAuth
+W0430 16:05:23.148282   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:05:23.309125   31090 provision.go:83] configureAuth start
+I0430 16:05:23.309311   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:05:23.494134   31090 provision.go:86] duration metric: took 184.945954ms to configureAuth
+W0430 16:05:23.494184   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:05:23.803691   31090 provision.go:83] configureAuth start
+I0430 16:05:23.803951   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:05:23.992700   31090 provision.go:86] duration metric: took 188.970462ms to configureAuth
+W0430 16:05:23.992722   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:05:24.218200   31090 provision.go:83] configureAuth start
+I0430 16:05:24.218437   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:05:24.400221   31090 provision.go:86] duration metric: took 181.947936ms to configureAuth
+W0430 16:05:24.400245   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:05:25.067696   31090 provision.go:83] configureAuth start
+I0430 16:05:25.067894   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:05:25.276153   31090 provision.go:86] duration metric: took 208.41405ms to configureAuth
+W0430 16:05:25.276170   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:05:25.728734   31090 provision.go:83] configureAuth start
+I0430 16:05:25.728960   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:05:25.948410   31090 provision.go:86] duration metric: took 219.641386ms to configureAuth
+W0430 16:05:25.948428   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:05:26.559656   31090 provision.go:83] configureAuth start
+I0430 16:05:26.559910   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:05:26.781747   31090 provision.go:86] duration metric: took 222.03779ms to configureAuth
+W0430 16:05:26.781777   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:05:28.802445   31090 provision.go:83] configureAuth start
+I0430 16:05:28.802831   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:05:29.017506   31090 provision.go:86] duration metric: took 214.797032ms to configureAuth
+W0430 16:05:29.017530   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:05:32.178303   31090 provision.go:83] configureAuth start
+I0430 16:05:32.178493   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:05:32.382597   31090 provision.go:86] duration metric: took 204.262438ms to configureAuth
+W0430 16:05:32.382614   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:05:32.382633   31090 retry.go:75] will retry after 5.6s: stuck on same error as above for 1m58.5s...
+I0430 16:05:37.932921   31090 provision.go:83] configureAuth start
+I0430 16:05:37.933304   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:05:38.187638   31090 provision.go:86] duration metric: took 254.679406ms to configureAuth
+W0430 16:05:38.187656   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:05:38.187680   31090 retry.go:75] will retry after 6.5s: stuck on same error as above for 2m4.3s...
+I0430 16:05:44.717725   31090 provision.go:83] configureAuth start
+I0430 16:05:44.717924   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:05:44.924397   31090 provision.go:86] duration metric: took 206.640647ms to configureAuth
+W0430 16:05:44.924415   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:05:44.924439   31090 retry.go:75] will retry after 4.8s: stuck on same error as above for 2m11.1s...
+I0430 16:05:49.731235   31090 provision.go:83] configureAuth start
+I0430 16:05:49.731399   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:05:49.930051   31090 provision.go:86] duration metric: took 198.781536ms to configureAuth
+W0430 16:05:49.930074   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:05:49.930099   31090 retry.go:75] will retry after 7.4s: stuck on same error as above for 2m16.1s...
+I0430 16:05:57.352649   31090 provision.go:83] configureAuth start
+I0430 16:05:57.352823   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:05:57.564308   31090 provision.go:86] duration metric: took 211.604622ms to configureAuth
+W0430 16:05:57.564329   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:05:57.564361   31090 retry.go:75] will retry after 12.3s: stuck on same error as above for 2m23.7s...
+I0430 16:06:09.914032   31090 provision.go:83] configureAuth start
+I0430 16:06:09.914456   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:06:10.139238   31090 provision.go:86] duration metric: took 225.163296ms to configureAuth
+W0430 16:06:10.139254   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:06:10.139281   31090 retry.go:75] will retry after 18.2s: stuck on same error as above for 2m36.3s...
+I0430 16:06:28.316382   31090 provision.go:83] configureAuth start
+I0430 16:06:28.316872   31090 cli_runner.go:164] Run: docker container inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}},{{.GlobalIPv6Address}}{{end}}" minikube
+I0430 16:06:28.544222   31090 provision.go:86] duration metric: took 227.800417ms to configureAuth
+W0430 16:06:28.544249   31090 ubuntu.go:193] configureAuth failed: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:06:28.544282   31090 ubuntu.go:202] Error configuring auth during provisioning Temporary Error: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:06:28.544293   31090 machine.go:99] duration metric: took 1m10.663615343s to provisionDockerMachine
+I0430 16:06:28.544304   31090 client.go:176] duration metric: took 1m23.930458231s to LocalClient.Create
+I0430 16:06:30.544940   31090 ssh_runner.go:194] Run: sh -c "df -h /var | awk 'NR==2{print $5}'"
+I0430 16:06:30.545067   31090 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+I0430 16:06:30.779585   31090 sshutil.go:53] new ssh client: &{IP:127.0.0.1 Port:32803 SSHKeyPath:/home/arjun/.minikube/machines/minikube/id_rsa Username:docker}
+I0430 16:06:30.928758   31090 ssh_runner.go:194] Run: sh -c "df -BG /var | awk 'NR==2{print $4}'"
+I0430 16:06:30.943120   31090 start.go:127] duration metric: took 1m26.35647957s to createHost
+I0430 16:06:30.943154   31090 start.go:82] releasing machines lock for "minikube", held for 1m26.357079295s
+W0430 16:06:30.943352   31090 out.go:285] 😿  Failed to start docker container. Running "minikube delete" may fix it: creating host: create: provisioning: Temporary Error: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+I0430 16:06:30.951437   31090 out.go:203] 
+W0430 16:06:30.956285   31090 out.go:285] ❌  Exiting due to GUEST_PROVISION: error provisioning guest: Failed to start host: creating host: create: provisioning: Temporary Error: error getting ip during provisioning: IPs output should only be one line, got 2 lines
+W0430 16:06:30.956484   31090 out.go:285] 
+W0430 16:06:30.956988   31090 out.go:308] [31m╭───────────────────────────────────────────────────────────────────────────────────────────╮[0m
+[31m│[0m                                                                                           [31m│[0m
+[31m│[0m    😿  If the above advice does not help, please let us know:                             [31m│[0m
+[31m│[0m    👉  https://github.com/kubernetes/minikube/issues/new/choose                           [31m│[0m
+[31m│[0m                                                                                           [31m│[0m
+[31m│[0m    Please run `minikube logs --file=logs.txt` and attach logs.txt to the GitHub issue.    [31m│[0m
+[31m│[0m                                                                                           [31m│[0m
+[31m╰───────────────────────────────────────────────────────────────────────────────────────────╯[0m
+I0430 16:06:30.961811   31090 out.go:203] 
+
+
+==> Docker <==
+Apr 30 16:05:16 minikube systemd[1]: Starting docker.service - Docker Application Container Engine...
+Apr 30 16:05:17 minikube dockerd[198]: time="2026-04-30T16:05:17.077059310Z" level=info msg="Starting up"
+Apr 30 16:05:17 minikube dockerd[198]: time="2026-04-30T16:05:17.079245743Z" level=info msg="OTEL tracing is not configured, using no-op tracer provider"
+Apr 30 16:05:17 minikube dockerd[198]: time="2026-04-30T16:05:17.079858740Z" level=info msg="CDI directory does not exist, skipping: failed to monitor for changes: no such file or directory" dir=/etc/cdi
+Apr 30 16:05:17 minikube dockerd[198]: time="2026-04-30T16:05:17.079949333Z" level=info msg="CDI directory does not exist, skipping: failed to monitor for changes: no such file or directory" dir=/var/run/cdi
+Apr 30 16:05:17 minikube dockerd[198]: time="2026-04-30T16:05:17.132611558Z" level=info msg="Creating a containerd client" address=/run/containerd/containerd.sock timeout=1m0s
+Apr 30 16:05:17 minikube dockerd[198]: time="2026-04-30T16:05:17.146721092Z" level=info msg="Loading containers: start."
+Apr 30 16:05:17 minikube dockerd[198]: time="2026-04-30T16:05:17.146974124Z" level=info msg="NRI is disabled"
+Apr 30 16:05:17 minikube dockerd[198]: time="2026-04-30T16:05:17.179286143Z" level=info msg="[graphdriver] using prior storage driver: overlay2"
+Apr 30 16:05:17 minikube dockerd[198]: time="2026-04-30T16:05:17.190182069Z" level=info msg="Restoring containers: start."
+Apr 30 16:05:17 minikube dockerd[198]: time="2026-04-30T16:05:17.243451771Z" level=info msg="Deleting nftables IPv4 rules" error="exit status 1"
+Apr 30 16:05:17 minikube dockerd[198]: time="2026-04-30T16:05:17.291031499Z" level=info msg="Deleting nftables IPv6 rules" error="exit status 1"
+Apr 30 16:05:18 minikube dockerd[198]: time="2026-04-30T16:05:18.198198558Z" level=info msg="Loading containers: done."
+Apr 30 16:05:18 minikube dockerd[198]: time="2026-04-30T16:05:18.241801578Z" level=info msg="Docker daemon" commit=6bc6209 containerd-snapshotter=false storage-driver=overlay2 version=29.2.1
+Apr 30 16:05:18 minikube dockerd[198]: time="2026-04-30T16:05:18.241951794Z" level=info msg="Initializing buildkit"
+Apr 30 16:05:18 minikube dockerd[198]: time="2026-04-30T16:05:18.303870015Z" level=info msg="Completed buildkit initialization"
+Apr 30 16:05:18 minikube dockerd[198]: time="2026-04-30T16:05:18.318577829Z" level=info msg="Daemon has completed initialization"
+Apr 30 16:05:18 minikube dockerd[198]: time="2026-04-30T16:05:18.318814249Z" level=info msg="API listen on /run/docker.sock"
+Apr 30 16:05:18 minikube systemd[1]: Started docker.service - Docker Application Container Engine.
+
+
+==> container status <==
+CONTAINER           IMAGE               CREATED             STATE               NAME                ATTEMPT             POD ID              POD                 NAMESPACE
+time="2026-04-30T16:08:50Z" level=warning msg="Config \"/etc/crictl.yaml\" does not exist, trying next: \"/usr/local/bin/crictl.yaml\""
+time="2026-04-30T16:08:50Z" level=warning msg="runtime connect using default endpoints: [unix:///run/containerd/containerd.sock unix:///run/crio/crio.sock unix:///var/run/cri-dockerd.sock]. As the default settings are now deprecated, you should set the endpoint instead."
+time="2026-04-30T16:08:50Z" level=warning msg="Image connect using default endpoints: [unix:///run/containerd/containerd.sock unix:///run/crio/crio.sock unix:///var/run/cri-dockerd.sock]. As the default settings are now deprecated, you should set the endpoint instead."
+
+
+==> describe nodes <==
+command /bin/bash -c "sudo /var/lib/minikube/binaries/v1.35.1/kubectl describe nodes --kubeconfig=/var/lib/minikube/kubeconfig" failed with error: /bin/bash -c "sudo /var/lib/minikube/binaries/v1.35.1/kubectl describe nodes --kubeconfig=/var/lib/minikube/kubeconfig": Process exited with status 1
+stdout:
+
+stderr:
+error: stat /var/lib/minikube/kubeconfig: no such file or directory
+
+
+==> dmesg <==
+[Apr30 15:35] Speculative Return Stack Overflow: IBPB-extending microcode not applied!
+[  +0.000001] Speculative Return Stack Overflow: WARNING: See https://kernel.org/doc/html/latest/admin-guide/hw-vuln/srso.html for mitigation options.
+[  +0.044152] PCI: Fatal: No config space access function found
+[  +0.036189] PCI: System does not support PCI
+[  +0.161839] device-mapper: core: CONFIG_IMA_DISABLE_HTABLE is disabled. Duplicate IMA measurements will not be recorded in the IMA log.
+[  +4.430851] WSL (2 - init-systemd(Ubuntu)) WARNING: /usr/share/zoneinfo/Asia/Calcutta not found. Is the tzdata package installed?
+[  +0.305597] Failed to connect to bus: No such file or directory
+[  +0.400241] systemd-journald[55]: File /var/log/journal/2890f67d9b914ff68a063ecd8eebca92/system.journal corrupted or uncleanly shut down, renaming and replacing.
+[  +0.378299] misc dxg: dxgk: dxgkio_is_feature_enabled: Ioctl failed: -22
+[  +0.005480] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[  +0.000638] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[  +0.000811] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[  +0.001086] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[  +1.987176] TCP: eth0: Driver has suspect GRO implementation, TCP performance may be compromised.
+[  +0.085776] WSL (245) ERROR: CheckConnection: getaddrinfo() failed: -5
+[  +0.708562] weston[270]: memfd_create() called without MFD_EXEC or MFD_NOEXEC_SEAL set
+[  +2.975116] systemd-journald[55]: File /var/log/journal/2890f67d9b914ff68a063ecd8eebca92/user-1000.journal corrupted or uncleanly shut down, renaming and replacing.
+[ +15.502287] Exception: 
+[  +0.000007] Operation canceled @p9io.cpp:258 (AcceptAsync)
+
+[ +10.023805] WSL (2 - init-systemd(Ubuntu)) ERROR: InitTerminateInstanceInternal:2708: systemctl poweroff did not terminate the instance in 10000 ms, calling reboot(RB_POWER_OFF)
+[Apr30 15:36] WSL (2 - init-systemd(Ubuntu)) WARNING: /usr/share/zoneinfo/Asia/Calcutta not found. Is the tzdata package installed?
+[  +0.298037] Failed to connect to bus: No such file or directory
+[  +0.300878] systemd-journald[52]: File /var/log/journal/2890f67d9b914ff68a063ecd8eebca92/system.journal corrupted or uncleanly shut down, renaming and replacing.
+[  +1.334762] misc dxg: dxgk: dxgkio_is_feature_enabled: Ioctl failed: -22
+[  +0.005429] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[  +0.001112] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[  +0.000692] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[  +0.000884] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[  +3.665028] systemd-journald[52]: File /var/log/journal/2890f67d9b914ff68a063ecd8eebca92/user-1000.journal corrupted or uncleanly shut down, renaming and replacing.
+[Apr30 15:37] Exception: 
+[  +0.000011] Operation canceled @p9io.cpp:258 (AcceptAsync)
+
+[ +10.009840] WSL (2 - init-systemd(Ubuntu)) ERROR: InitTerminateInstanceInternal:2708: systemctl poweroff did not terminate the instance in 10000 ms, calling reboot(RB_POWER_OFF)
+[Apr30 15:38] WSL (2 - init-systemd(Ubuntu)) WARNING: /usr/share/zoneinfo/Asia/Calcutta not found. Is the tzdata package installed?
+[  +0.307547] Failed to connect to bus: No such file or directory
+[  +0.314411] systemd-journald[52]: File /var/log/journal/2890f67d9b914ff68a063ecd8eebca92/system.journal corrupted or uncleanly shut down, renaming and replacing.
+[  +1.297520] misc dxg: dxgk: dxgkio_is_feature_enabled: Ioctl failed: -22
+[  +0.005577] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[  +0.000966] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[  +0.000701] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[  +0.000984] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[  +4.728962] systemd-journald[52]: File /var/log/journal/2890f67d9b914ff68a063ecd8eebca92/user-1000.journal corrupted or uncleanly shut down, renaming and replacing.
+
+
+==> kernel <==
+ 16:08:50 up 33 min,  0 user,  load average: 0.43, 0.64, 0.59
+Linux minikube 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64 GNU/Linux
+PRETTY_NAME="Debian GNU/Linux 12 (bookworm)"
+
+
+==> kubelet <==
+-- No entries --
+
