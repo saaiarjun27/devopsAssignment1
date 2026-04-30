@@ -1,0 +1,106 @@
+# A/B Testing requires a Service Mesh like Istio or an API Gateway / Ingress controller.
+# This manifest uses an Istio VirtualService to route based on a specific user header.
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: aceest-fitness-ab-testing
+spec:
+  hosts:
+  - aceest-fitness.example.com
+  http:
+  # Route traffic for users in the "beta-testers" group to version B
+  - match:
+    - headers:
+        user-group:
+          exact: beta-testers
+    route:
+    - destination:
+        host: aceest-fitness-version-b
+  # Default route for all other users to version A
+  - route:
+    - destination:
+        host: aceest-fitness-version-a
+
+---
+# Deployment for version A (Current)
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aceest-fitness-version-a
+  labels:
+    app: aceest-fitness
+    version: v-a
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: aceest-fitness
+      version: v-a
+  template:
+    metadata:
+      labels:
+        app: aceest-fitness
+        version: v-a
+    spec:
+      containers:
+      - name: aceest-fitness
+        image: saaiarjun27/aceest-fitness:v1.0
+        ports:
+        - containerPort: 5000
+
+---
+# Deployment for version B (New Experiment)
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aceest-fitness-version-b
+  labels:
+    app: aceest-fitness
+    version: v-b
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: aceest-fitness
+      version: v-b
+  template:
+    metadata:
+      labels:
+        app: aceest-fitness
+        version: v-b
+    spec:
+      containers:
+      - name: aceest-fitness
+        image: saaiarjun27/aceest-fitness:v1.1
+        ports:
+        - containerPort: 5000
+
+---
+# Service for version A
+apiVersion: v1
+kind: Service
+metadata:
+  name: aceest-fitness-version-a
+spec:
+  selector:
+    app: aceest-fitness
+    version: v-a
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
+
+---
+# Service for version B
+apiVersion: v1
+kind: Service
+metadata:
+  name: aceest-fitness-version-b
+spec:
+  selector:
+    app: aceest-fitness
+    version: v-b
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000

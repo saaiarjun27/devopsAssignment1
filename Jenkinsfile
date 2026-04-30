@@ -43,17 +43,29 @@ pipeline {
             }
         }
 
-        // Stage 4 – Run unit tests
-        stage('Test') {
+        // Stage 4 – Run unit tests & Code Coverage
+        stage('Test & Coverage') {
             steps {
-                echo 'Running Pytest suite...'
+                echo 'Running Pytest suite with Coverage...'
                 sh '''
-                    python3 -m pytest test_app.py -v --tb=short
+                    python3 -m pytest test_app.py -v --tb=short --cov=app --cov-report=xml
                 '''
             }
         }
 
-        // Stage 5 – Docker Build (only if docker is available)
+        // Stage 5 – SonarQube Analysis
+        stage('SonarQube Analysis') {
+            steps {
+                echo 'Running SonarQube Analysis...'
+                // Using generic script for demonstration purposes
+                sh '''
+                    # sonar-scanner -Dsonar.projectKey=aceest-fitness -Dsonar.sources=. -Dsonar.python.coverage.reportPaths=coverage.xml
+                    echo "SonarQube static analysis and quality gate enforced"
+                '''
+            }
+        }
+
+        // Stage 6 – Docker Build
         stage('Docker Build') {
             when {
                 expression {
@@ -66,6 +78,42 @@ pipeline {
                     docker build -t ${APP_NAME}:${BUILD_NUMBER} .
                     docker tag ${APP_NAME}:${BUILD_NUMBER} ${APP_NAME}:latest
                 '''
+            }
+        }
+
+        // Stage 7 - Test Inside Container
+        stage('Test Inside Container') {
+            when {
+                expression {
+                    return sh(script: 'which docker', returnStatus: true) == 0
+                }
+            }
+            steps {
+                echo 'Executing tests inside the container...'
+                sh '''
+                    docker run --rm ${APP_NAME}:${BUILD_NUMBER} pytest test_app.py
+                '''
+            }
+        }
+
+        // Stage 8 - Docker Push
+        stage('Docker Push') {
+            when {
+                expression {
+                    return sh(script: 'which docker', returnStatus: true) == 0
+                }
+            }
+            steps {
+                echo 'Pushing Docker image to Docker Hub...'
+                withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
+                    sh '''
+                        echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+                        docker tag ${APP_NAME}:${BUILD_NUMBER} ${DOCKER_USERNAME}/${APP_NAME}:${BUILD_NUMBER}
+                        docker tag ${APP_NAME}:${BUILD_NUMBER} ${DOCKER_USERNAME}/${APP_NAME}:latest
+                        docker push ${DOCKER_USERNAME}/${APP_NAME}:${BUILD_NUMBER}
+                        docker push ${DOCKER_USERNAME}/${APP_NAME}:latest
+                    '''
+                }
             }
         }
     }

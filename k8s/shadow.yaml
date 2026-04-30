@@ -1,0 +1,103 @@
+# Shadow Deployment requires a Service Mesh like Istio or an API Gateway.
+# This manifest assumes Istio is installed and handles traffic mirroring.
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: aceest-fitness-shadow
+spec:
+  hosts:
+  - aceest-fitness.example.com
+  http:
+  - route:
+    - destination:
+        host: aceest-fitness-stable
+      weight: 100
+    # Shadow/Mirror the traffic to the new version without affecting real users
+    mirror:
+      host: aceest-fitness-shadow
+    mirrorPercentage:
+      value: 100.0
+
+---
+# Deployment for stable version
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aceest-fitness-stable
+  labels:
+    app: aceest-fitness
+    version: stable
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: aceest-fitness
+      version: stable
+  template:
+    metadata:
+      labels:
+        app: aceest-fitness
+        version: stable
+    spec:
+      containers:
+      - name: aceest-fitness
+        image: saaiarjun27/aceest-fitness:v1.0
+        ports:
+        - containerPort: 5000
+
+---
+# Deployment for shadow version
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aceest-fitness-shadow
+  labels:
+    app: aceest-fitness
+    version: shadow
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: aceest-fitness
+      version: shadow
+  template:
+    metadata:
+      labels:
+        app: aceest-fitness
+        version: shadow
+    spec:
+      containers:
+      - name: aceest-fitness
+        image: saaiarjun27/aceest-fitness:v1.1-experimental
+        ports:
+        - containerPort: 5000
+
+---
+# Service for stable
+apiVersion: v1
+kind: Service
+metadata:
+  name: aceest-fitness-stable
+spec:
+  selector:
+    app: aceest-fitness
+    version: stable
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
+
+---
+# Service for shadow
+apiVersion: v1
+kind: Service
+metadata:
+  name: aceest-fitness-shadow
+spec:
+  selector:
+    app: aceest-fitness
+    version: shadow
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
